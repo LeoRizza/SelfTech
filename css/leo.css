@@ -21,9 +21,12 @@ body {
 
 .manos {
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    position: absolute; /* Para gestionar el z-index */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    position: absolute;
+    /* Para gestionar el z-index */
     z-index: 1;
     margin-top: 40vh;
 }
@@ -31,13 +34,16 @@ body {
 .manos img {
     width: 455px;
     height: 439px;
-    position: relative; /* Posición relativa para gestionar el z-index */
-    z-index: 1; /* Asegura que las imágenes estén en el mismo nivel que .manos */
+    position: relative;
+    /* Posición relativa para gestionar el z-index */
+    z-index: 1;
+    /* Asegura que las imágenes estén en el mismo nivel que .manos */
 }
 
 .manos img:first-child {
-    margin-left: 15%;
-    margin-right: 590px; /* Separación entre las imágenes, ajusta según sea necesario */
+    margin-left: 12vw;
+    margin-right: 32rem;
+    /* Separación entre las imágenes, ajusta según sea necesario */
 }
 
 .containerServicios {
@@ -50,12 +56,15 @@ body {
 }
 
 .containerServicios h2 {
+    color: #FFF;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
     font-size: 48px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 59px;
+    letter-spacing: 0em;
+    text-align: center;
 }
 
 .boxServicios {
@@ -80,25 +89,29 @@ body {
 
 .divServicios1 {
     display: flex;
-    flex-direction: column;
+    flex: 1;
+    /* Esto permite que ambos divServicios1 crezcan según sea necesario */
+    flex-basis: 0;
+    /* Asegura que flex-grow funcione incluso si hay contenido suficiente en el divServicios1 */
+    flex-grow: 1;
     align-items: center;
     text-align: center;
+    flex-direction: column;
 }
 
 .workflow360 {
-    margin: 5%;
-    margin-top: 30vh;
+    width: 68rem;
     border-radius: 10px;
     border: 2.5px solid #1F7667;
     background: rgba(255, 255, 255, 0.00);
     text-align: center;
     padding: 16px;
+    margin: 30vh auto 4vh auto;
 }
 
 .workflow360 h2 {
     color: #FFF;
     text-align: center;
-    font-family: Montserrat;
     font-size: 35px;
     font-style: normal;
     font-weight: 700;
@@ -110,10 +123,46 @@ body {
 .workflow360 h4 {
     color: #FFF;
     text-align: center;
-    font-family: Montserrat;
     font-size: 45px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
     margin: 0;
+}
+
+.serviciosDetalle2 {
+    display: flex;
+    width: 68rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra los elementos a lo largo del eje principal */
+}
+
+.serviciosDetalle1 {
+    display: flex;
+    justify-content: center;
+}
+
+.detallesBx {
+    margin: 4vh 20px;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+}
+
+.detallesBx h5 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 0 12px;
+}
+
+.detallesBx p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.detalleBxTitles {
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
