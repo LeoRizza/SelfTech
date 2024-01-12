@@ -1,4 +1,4 @@
-.casos_exito{
+.casos_exito {
   height: 360px;
   background: linear-gradient(to left, #1F7667, #6CC6DA);
   display: flex;
@@ -8,36 +8,39 @@
   gap: 40px;
 }
 
-.rounded{
+.rounded {
   border-radius: 50%;
 }
-.casos_exito_box{  
+
+.casos_exito_box {
   width: 480px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
-.casos_exito_titulo{
+.casos_exito_titulo {
   font-size: 45px;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 30px;
 }
 
-.casos_exito_contenido{
+.casos_exito_contenido {
   font-weight: 600;
   font-size: 22px;
-  margin-bottom: 30px;  
+  margin-bottom: 30px;
 }
-.casos_exito_autor{
+
+.casos_exito_autor {
   font-size: 14px;
   font-weight: 200;
   margin-bottom: 10px;
 }
-.casos_exito_autor-tipo{
+
+.casos_exito_autor-tipo {
   font-weight: 700;
 }
 
-.casos_exito_button{
+.casos_exito_button {
   background-color: black;
   color: white;
   padding: 12px 15px;
@@ -47,7 +50,7 @@
   cursor: pointer;
 }
 
-.conocenos_section{
+.conocenos_section {
   display: flex;
   background-color: #1D1D1B;
   color: white;
@@ -57,32 +60,84 @@
   gap: 100px;
   align-items: center;
 }
-.conocenos_box_text{
+
+.conocenos_box_text {
   width: 620px;
 }
 
-.conocenos_imagenes{
+.conocenos_imagenes {
   position: relative;
   margin-bottom: 20px;
 }
 
-.conocenos_imagenes_fundador_mundo{
+.conocenos_imagenes_fundador_mundo {
   position: absolute;
   right: -25px;
-  top:-20px
+  top: -20px
 }
 
-.conocenos_text_title{
+.conocenos_text_title {
   font-size: 45px;
   font-weight: 700;
   margin-bottom: 30px
 }
 
-.conocenos_text_parrafo{
+.conocenos_text_parrafo {
   font-size: 20px;
   margin-bottom: 20px
 }
 
-.conocenos_box_fundador{
+.conocenos_box_fundador {
   text-align: center;
+}
+
+.formulario {
+  background-color: #1D1D1B;
+  display: flex;
+  color: white;
+  gap: 70px;
+  align-items: center;
+}
+
+.formulario_box {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  align-items: start;
+}
+
+.formulario_imagen {
+  margin-left: 20px;
+}
+
+.formulario_box_titulo {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.formulario_box_label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formulario_box_input {
+  all: unset;
+  height: 36px;
+  width: 544px;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, #1D1D1B 77.26%, #1F7667 100%);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.formulario_box_button {
+  padding: 12px 47px;
+  border-radius: 8px;
+  background: #1F5C51;
+  color: #FFF;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 20px;
+  margin:auto;
+  cursor:pointer;
 }
