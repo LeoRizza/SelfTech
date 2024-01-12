@@ -3,6 +3,8 @@
   background: linear-gradient(to left, #1F7667, #6CC6DA);
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .rounded{
@@ -10,7 +12,31 @@
 }
 
 .casos_exito_titulo{
-  color: white;
   font-size: 45px;
   font-family: 'Montserrat', sans-serif;
+}
+
+.casos_exito_box{
+  width: 480px;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.casos_exito_autor{
+  font-size: 14px;
+  font-weight: 200;
+}
+.casos_exito_autor-tipo{
+  font-weight: 700;
+}
+
+.casos_exito_button{
+  background-color: black;
+  color: white;
+  padding: 12px 15px;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
 }
