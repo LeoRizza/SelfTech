@@ -27,16 +27,30 @@ const img_caso_retrato = document.getElementById("img_caso_retrato")
 const text_contenido = document.getElementById("text_contenido") 
 const text_autor = document.getElementById("text_autor") 
 const text_empresa = document.getElementById("text_empresa") 
+let posicion_carrusel = 0
 
-const inicializar_carrusel= ()=>{
-  img_caso_logo.src=dataCarrusel[0].img1
-  img_caso_retrato.src=dataCarrusel[0].img2
-  text_contenido.innerHTML=dataCarrusel[0].contenido
-  text_autor.innerHTML=dataCarrusel[0].autor
-  text_empresa.innerHTML=dataCarrusel[0].empresa
+const cargar_carrusel= (posicion)=>{
+  img_caso_logo.src=dataCarrusel[posicion].img1
+  img_caso_retrato.src=dataCarrusel[posicion].img2
+  text_contenido.innerHTML=dataCarrusel[posicion].contenido
+  text_autor.innerHTML=dataCarrusel[posicion].autor
+  text_empresa.innerHTML=dataCarrusel[posicion].empresa
 }
 
+function retroceder_carrusel(){
+  console.log("retroceder")
+  posicion_carrusel--
+  if(posicion_carrusel<0) posicion_carrusel=dataCarrusel.length-1
+  cargar_carrusel(posicion_carrusel)  
+}
 
-inicializar_carrusel()
+function avanzar_carrusel(){
+  console.log("avanzar")
+  posicion_carrusel++
+  if(posicion_carrusel>=dataCarrusel.length) posicion_carrusel=0
+  cargar_carrusel(posicion_carrusel)
+}
+
+cargar_carrusel(0)
 
 
