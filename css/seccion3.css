@@ -5,27 +5,33 @@
   align-items: center;
   justify-content: center;
   color: white;
+  gap: 40px;
 }
 
 .rounded{
   border-radius: 50%;
 }
+.casos_exito_box{  
+  width: 480px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
 
 .casos_exito_titulo{
   font-size: 45px;
   font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
 }
 
-.casos_exito_box{
-  width: 480px;
-  text-align: center;
-  font-size: 22px;
-  font-family: 'Montserrat', sans-serif;
+.casos_exito_contenido{
   font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 .casos_exito_autor{
   font-size: 14px;
   font-weight: 200;
+  margin-bottom: 10px;
 }
 .casos_exito_autor-tipo{
   font-weight: 700;
