@@ -1,3 +1,16 @@
 .casos_exito{
-  background-color: green;
+  height: 392px;
+  background: linear-gradient(to left, #1F7667, #6CC6DA);
+  display: flex;
+  align-items: center;
+}
+
+.rounded{
+  border-radius: 50%;
+}
+
+.casos_exito_titulo{
+  color: white;
+  font-size: 45px;
+  font-family: 'Montserrat', sans-serif;
 }
