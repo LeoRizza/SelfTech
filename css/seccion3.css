@@ -1,5 +1,5 @@
 .casos_exito{
-  height: 392px;
+  height: 360px;
   background: linear-gradient(to left, #1F7667, #6CC6DA);
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
 .casos_exito_contenido{
   font-weight: 600;
   font-size: 22px;
-  margin-bottom: 30px;
+  margin-bottom: 30px;  
 }
 .casos_exito_autor{
   font-size: 14px;
@@ -45,4 +45,44 @@
   font-size: 20px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.conocenos_section{
+  display: flex;
+  background-color: #1D1D1B;
+  color: white;
+  padding: 100px;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  gap: 100px;
+  align-items: center;
+}
+.conocenos_box_text{
+  width: 620px;
+}
+
+.conocenos_imagenes{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.conocenos_imagenes_fundador_mundo{
+  position: absolute;
+  right: -25px;
+  top:-20px
+}
+
+.conocenos_text_title{
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 30px
+}
+
+.conocenos_text_parrafo{
+  font-size: 20px;
+  margin-bottom: 20px
+}
+
+.conocenos_box_fundador{
+  text-align: center;
 }
