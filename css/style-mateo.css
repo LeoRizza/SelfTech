@@ -13,12 +13,19 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom-style: solid;
-    border-bottom-color: #338B86;
+    /* border-bottom-style: solid;  */
+    /* border-bottom-color: #338B86; */
+    background: linear-gradient(180deg, rgba(63, 167, 161, 0.2), rgba(51, 139, 134, 0.0) );
     border-bottom-width: 1px;
     font-weight: bold;
     position: fixed;
-    background-color: #1D1D1B;
+    background-color: rgba(29, 29, 27, 0.4);
+    backdrop-filter: blur(15px);
+}
+
+.header.blur{
+    background-color: rgba(29, 29, 27, 0.4);
+    backdrop-filter: blur(15px);
 }
 
 .logo.nav{
@@ -28,7 +35,6 @@ body{
 
 .nav{
     width: 70%;
-    
 }
 
 .nav .nav-list .li .nav-button,
@@ -64,12 +70,12 @@ body{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    margin-left: 10%;
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
+    margin-left: 5%;
 }
 
 .nav-button{
@@ -82,13 +88,16 @@ body{
     text-decoration: none;
     color: #FFFFFF;
     padding: 7%;
-    background-color: #338B86;
+    transition: 1s;
+    background: linear-gradient(120deg, var(--c1, #245a57), var(--c2, #338B86) 51%, var(--c1, #245a57)) var(--x, 0)/ 200%;
+    background-size: 300% 100%;
     border-radius: 15px;
 }
 
 .logo-img{
     width: 100%;
     height: 70px;
+    margin-left: 20%;
 }
 
 .logo-nav:hover{
@@ -102,20 +111,23 @@ body{
 .cotizaBtn{
     text-decoration: none;
     color: #FFFFFF;
-    background-color: #338B86;
-    border-radius: 10px;
+    border-radius: 24px;
     font-weight: 600;
-    padding: 2%;
-    margin-left: 10%;
+    padding: 3.5%;
+    transition: 1s;
+    background: linear-gradient(120deg, var(--c1, #245a57), var(--c2, #338B86) 51%, var(--c1, #245a57)) var(--x, 0)/ 200%;
+    background-size: 300% 100%;
 }
 
 .cotizaBtn:hover, .nav-button2:hover{
-    transition: 0.5s;
-    background-color: #255c59;
+    --x: 100%;
+    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7)); 
+
 }
 
 .main-page{
     width: 100%;
+    max-width: fit-content;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -128,19 +140,30 @@ body{
 }
 
 .main-title{
-    font-size: 250%;
-    font-weight: bold;
+    width: 40.9375rem;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     margin-bottom: 35px;
 }
 
 .main-img{
     width: 100%;
-    margin-right: 10%;
+    animation: 1s infinite alternate upndown2;
+}
+
+.main-img:hover{
+    transition: 1s;
+    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7)); 
 }
 
 .caraSt{
-    width: 100%;
-    margin-left: 5%;
+    width: 43.375rem;
+    height: 30.6875rem;
+    flex-shrink: 0;
 }
 
 .typing{
@@ -177,13 +200,23 @@ body{
 
 @keyframes upndown {
     from {
-      margin-bottom: 0%;
+        margin-bottom: 0%;
     }
-  
+
     to {
-      margin-bottom: 50%;
+        margin-bottom: 50%;
     }
-  }
+}
+
+@keyframes upndown2 {
+    from {
+        margin-bottom: -.2%;
+    }
+
+    to {
+        margin-bottom: .2%;
+    }
+}
 
 .scroll-down:hover{
     color: #338B86;
