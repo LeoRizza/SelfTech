@@ -101,6 +101,7 @@
   color: white;
   gap: 70px;
   align-items: center;
+  justify-content: center;
 }
 
 .formulario_box {
@@ -108,10 +109,15 @@
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   align-items: start;
+  flex-grow: 6;  
 }
 
-.formulario_imagen {
+.formulario_imagen_box {
   margin-left: 20px;
+  flex-grow: 4;
+  display: flex;
+  justify-content: center;
+  
 }
 
 .formulario_box_titulo {
@@ -135,6 +141,7 @@
 }
 
 .formulario_box_button {
+  all:unset;
   padding: 12px 47px;
   border-radius: 8px;
   background: #1F5C51;
