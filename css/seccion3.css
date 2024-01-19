@@ -209,6 +209,11 @@
   font-family: 'Montserrat', sans-serif;
   align-items: start;
   flex-grow: 6;  
+  @media(max-width:600px){
+    align-items: center;
+    width: 250px;
+
+   }
 }
 
 .formulario_imagen_box {
@@ -216,17 +221,28 @@
   flex-grow: 4;
   display: flex;
   justify-content: center;
-  
+  @media(max-width:600px){
+   display: none;
+  }
 }
 
 .formulario_box_titulo {
   font-size: 40px;
   margin-bottom: 30px;
+  @media(max-width:600px){
+    font-size: 30px;
+    width: 340px;
+    text-align: center;
+    line-height: 48px;
+  }
 }
 
 .formulario_box_label {
   font-size: 20px;
   font-weight: 600;
+  @media(max-width:600px){
+    width: 250px;
+  }
 }
 
 .formulario_box_input {
@@ -237,6 +253,10 @@
   background: linear-gradient(180deg, #1D1D1B 77.26%, #1F7667 100%);
   margin-bottom: 20px;
   font-size: 20px;
+  @media(max-width:600px){
+    width: 230px;
+    border-radius: 6px;
+  }
 }
 
 .formulario_box_button {
@@ -250,6 +270,9 @@
   font-size: 20px;
   margin:auto;
   cursor:pointer;
+  @media(max-width:600px){
+    padding: 12px;
+  }
 }
 
 .footer{
@@ -259,4 +282,7 @@
   justify-content: center;
   padding: 60px;
   font-size: 20px;
+  @media(max-width:600px){
+    font-size: 14px;
+  }
 }
