@@ -7,6 +7,15 @@
   color: white;
   gap: 40px;
 }
+.casos_exito_movile {
+  height: 360px;
+  background: linear-gradient(to left, #1F7667, #6CC6DA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 40px;
+}
 
 .rounded {
   border-radius: 50%;
