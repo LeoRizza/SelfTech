@@ -6,6 +6,33 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.btn {
+    transition: all .2s;
+    user-select: none;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(55, 144, 140, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(55, 144, 140, 0.2);
+}
+
+.btn::after {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
 .servicios h3 {
     text-align: center;
     color: #FFF;
@@ -21,40 +48,34 @@ body {
     margin: 0 auto;
 }
 
-.manos {
-    display: flex;
-    justify-content: center;
-    /* Centrar horizontalmente */
-    align-items: center;
-    /* Centrar verticalmente */
+.manosD {
+    transform-origin: center;
+    margin-top: 36vh;
     position: absolute;
-    /* Para gestionar el z-index */
     z-index: 1;
-    margin-top: 40vh;
-}
-
-.manos img {
     width: 455px;
     height: 439px;
-    position: relative;
-    /* Posición relativa para gestionar el z-index */
-    z-index: 1;
-    /* Asegura que las imágenes estén en el mismo nivel que .manos */
+    left: -5vw;
+    transition: transform 3s ease-in-out;
 }
 
-.manos img:first-child {
-    margin-left: 12vw;
-    margin-right: 32rem;
-    /* Separación entre las imágenes, ajusta según sea necesario */
+.manosI {
+    transform-origin: center;
+    margin-top: 36vh;
+    position: absolute;
+    z-index: 1;
+    width: 455px;
+    height: 439px;
+    right: -2vw;
+    transition: transform 3s ease-in-out;
 }
 
 .containerServicios {
     display: flex;
     flex-direction: row;
-    margin: 73px 10%;
-    align-items: center;
-    position: relative;
-    z-index: 3;
+    margin: 73px 2rem;
+    align-items: flex-end;
+    justify-content: space-evenly;
 }
 
 .containerServicios h2 {
@@ -66,17 +87,17 @@ body {
     font-weight: 600;
     line-height: 59px;
     letter-spacing: 0em;
-    text-align: center;
 }
 
 .boxServicios {
-    width: 414px;
-    height: 342px;
+    width: 25rem;
+    height: 21rem;
     border-radius: 40px;
     border: 1px solid #6CC6DA;
     background: linear-gradient(180deg, #6CC6DA 0%, #338B86 100%);
     display: flex;
     align-items: center;
+    z-index: 3;
 }
 
 .serviciosText {
@@ -91,18 +112,24 @@ body {
 
 .divServicios1 {
     display: flex;
-    flex: 1;
-    /* Esto permite que ambos divServicios1 crezcan según sea necesario */
-    flex-basis: 0;
-    /* Asegura que flex-grow funcione incluso si hay contenido suficiente en el divServicios1 */
-    flex-grow: 1;
     align-items: center;
     text-align: center;
     flex-direction: column;
+    position: relative;
+    z-index: 3;
+}
+
+.divServicios2 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
 }
 
 .workflow360 {
-    width: 68rem;
+    max-width: 68rem;
     border-radius: 10px;
     border: 2.5px solid #1F7667;
     background: rgba(255, 255, 255, 0.00);
@@ -137,7 +164,6 @@ body {
     width: 68rem;
     flex-wrap: wrap;
     justify-content: center;
-    /* Centra los elementos a lo largo del eje principal */
 }
 
 .serviciosDetalle1 {
@@ -167,4 +193,267 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
+}
+
+.ondas {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+}
+
+.onda1,
+.onda2 {
+    width: 550px;
+    left: 0;
+    transition: transform 1s ease-in-out;
+}
+
+@media (max-width: 2200px) {
+    .manosD {
+        left: -4vw;
+        margin-top: 27vh;
+    }
+
+    .manosI {
+        margin-top: 27vh;
+        right: -2vw;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .onda1 {
+        width: 300px;
+        left: 0;
+
+    }
+
+    .onda2 {
+        width: 300px;
+        left: 0;
+    }
+
+    .manosD {
+        width: 317px;
+        height: 306px;
+        margin-top: 15vh;
+        left: -8vw;
+    }
+
+    .manosI {
+        width: 317px;
+        height: 306px;
+        margin-top: 15vh;
+        right: -6vw;
+    }
+
+    .boxServicios {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .servicios h3 {
+        width: 178px;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    .containerServicios {
+        margin: 43px auto;
+    }
+
+    .containerServicios h2 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+        flex-shrink: 0;
+    }
+
+    .boxServicios {
+        width: 200px;
+        height: 206px;
+    }
+
+    .serviciosText {
+        font-size: 14px;
+        margin: 5%;
+    }
+
+    .workflow360 {
+        width: 44rem;
+        padding: 10px 16px;
+        margin: 20vh auto 2vh auto;
+    }
+
+    .workflow360 h2 {
+        color: #FFF;
+        font-size: 32px;
+        letter-spacing: -0.64px;
+    }
+
+    .workflow360 h4 {
+        font-size: 36px;
+        line-height: 150%;
+    }
+
+    .serviciosDetalle2 {
+        width: 52rem;
+    }
+
+    .detallesBx {
+        margin: 4vh 20px;
+        width: 238px;
+    }
+
+    .detallesBx h5 {
+        font-size: 18px;
+        margin: 0 0 0 8px;
+    }
+
+    .detallesBx p {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .detalleBxTitles {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px) {
+    .ondas {
+        display: none;
+    }
+
+    .manosD {
+        width: 17rem;
+        height: 18rem;
+        margin-top: 15vh;
+        left: -8vw;
+
+    }
+
+    .manosI {
+        width: 17rem;
+        height: 18rem;
+        margin-top: 15vh;
+        right: 0;
+    }
+
+    .servicios {
+        width: 100vw;
+    }
+
+    .servicios h3 {
+        width: 178px;
+        padding: 12px;
+        font-size: 18px;
+        margin: auto;
+    }
+
+    .containerServicios {
+        flex-direction: column;
+        margin: 43px auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .divServicios1, .divServicios2 {
+        margin-bottom: 25vh;
+    }
+
+    .containerServicios h2 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+        flex-shrink: 0;
+    }
+
+    .boxServicios {
+        width: 253px;
+        height: 198px;
+    }
+
+    .detallesPhone2 {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .detallesPhone1 {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .serviciosText {
+        font-size: 14px;
+        margin: 5%;
+    }
+
+    .workflow360 {
+        width: 75vw;
+        padding: 10px 16px;
+        margin: 10vh auto;
+    }
+
+    .workflow360 h2 {
+        font-size: 20px;
+        letter-spacing: -0.64px;
+    }
+
+    .workflow360 h4 {
+        font-size: 24px;
+        line-height: 150%;
+    }
+
+    .serviciosDetalle1 {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .serviciosDetalle2{
+        display: flex;
+        width: 80vw;
+    }
+
+    .detallesPhone1 {
+        position: relative;
+        padding-left: 50px;
+        text-align: right;
+    }
+
+    .detallesPhone2 {
+        position: relative;
+        padding-right: 50px;
+    }
+
+    .detallesBx {
+        margin: 1vh 20px;
+        width: 238px;
+    }
+
+    .detallesBx img {
+        width: 19px;
+    }
+
+    .detallesBx h5 {
+        font-size: 14px;
+        margin: 0 0 0 8px;
+    }
+
+    .detallesBx p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .detalleBxTitles {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
 }
