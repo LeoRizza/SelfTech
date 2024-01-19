@@ -6,15 +6,47 @@
   justify-content: center;
   color: white;
   gap: 40px;
+
+  @media(max-width:600px){
+    display: none;
+  }
 }
+
 .casos_exito_movile {
-  height: 360px;
-  background: linear-gradient(to left, #1F7667, #6CC6DA);
+  display: none;
+  @media(max-width:600px){
+    padding-top: 50px;
+    display: flex;
+    height: 550px;
+    align-items: start;
+    justify-content: center;
+    color: white;
+    gap: 40px;
+    background: linear-gradient(to left, #1F7667, #6CC6DA);
+    position: relative;
+  }
+}
+
+
+
+.casos_exito_box_images{
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-  gap: 40px;
+  gap: 10px;
+}
+.casos_exito_box_contenido{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  @media(max-width:600px){
+    margin-top: 17px;
+  }
+}
+
+.img_caso{
+  width: 145px;
+  height: 145px;
 }
 
 .rounded {
@@ -25,18 +57,27 @@
   width: 480px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+
 }
 
 .casos_exito_titulo {
   font-size: 45px;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 30px;
+  @media(max-width:600px){
+    font-size: 32px;
+  }
+  
 }
 
 .casos_exito_contenido {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 30px;
+  @media(max-width:600px){
+    font-size: 14px;
+    width: 250px;
+  }
 }
 
 .casos_exito_autor {
@@ -57,6 +98,13 @@
   font-size: 20px;
   border-radius: 8px;
   cursor: pointer;
+  @media(max-width:600px){
+    font-size: 16px;
+    position: absolute;
+    width: 240px;
+    bottom: 60px;
+    transform: translateX(-50%);
+  }
 }
 
 .casos_exito_flecha{
@@ -72,32 +120,74 @@
   font-family: 'Montserrat', sans-serif;
   gap: 100px;
   align-items: center;
+  @media(max-width:600px){
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px;    
+  }
 }
 
 .conocenos_box_text {
   width: 620px;
+  @media(max-width:600px){
+    width: 296px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+  }
 }
 
 .conocenos_imagenes {
   position: relative;
   margin-bottom: 20px;
+  @media(max-width:600px){
+    margin-bottom: 10px;
+  }
 }
 
 .conocenos_imagenes_fundador_mundo {
   position: absolute;
   right: -25px;
-  top: -20px
+  top: -20px;
+  @media(max-width:600px){
+    width: 45px;
+    height: 45px;
+    right: 0px;
+    top: -10px;
+  }
 }
+.conocenos_imagenes_fundador{
+  @media(max-width:600px){
+    width: 116px;
+    height: 114px;
+  }
+}
+
+.conocenos_fundador{
+  @media(max-width:600px){
+    font-size: 12px;
+  }
+}
+
 
 .conocenos_text_title {
   font-size: 45px;
   font-weight: 700;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  @media(max-width:600px){
+    font-size: 24px;
+    text-align: center;
+  }
 }
 
 .conocenos_text_parrafo {
   font-size: 20px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  @media(max-width:600px){
+    font-size: 14px;
+    text-align: center;
+    width: 265px;
+  }
 }
 
 .conocenos_box_fundador {
