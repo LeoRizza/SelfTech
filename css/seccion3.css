@@ -7,13 +7,14 @@
   color: white;
   gap: 40px;
 
-  @media(max-width:600px){
+  @media(max-width:1200px){
     display: none;
   }
 }
 
 .casos_exito_movile {
   display: none;
+  
   @media(max-width:600px){
     padding-top: 50px;
     display: flex;
@@ -23,8 +24,19 @@
     color: white;
     gap: 40px;
     background: linear-gradient(to left, #1F7667, #6CC6DA);
-    position: relative;
+    position: relative;    
   }
+  @media(min-width:600px) and (max-width: 1200px){
+    padding-top: 50px;
+    display: flex;
+    height: 613px;
+    align-items: start;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(to left, #1F7667, #6CC6DA);
+    position: relative;    
+  }  
+  
 }
 
 
@@ -42,6 +54,11 @@
   @media(max-width:600px){
     margin-top: 17px;
   }
+  @media(min-width:600px) and (max-width: 1200px){
+    margin-top: 52px;
+
+
+  }
 }
 
 .img_caso{
@@ -57,7 +74,9 @@
   width: 480px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-
+  @media(min-width:600px) and (max-width: 1200px){
+    width: 700px;
+  }
 }
 
 .casos_exito_titulo {
@@ -67,7 +86,9 @@
   @media(max-width:600px){
     font-size: 32px;
   }
-  
+  @media(min-width:600px) and (max-width: 1200px){
+    font-size: 40px;
+  }
 }
 
 .casos_exito_contenido {
@@ -77,6 +98,11 @@
   @media(max-width:600px){
     font-size: 14px;
     width: 250px;
+  }
+  @media(min-width:600px) and (max-width: 1200px){
+    font-size: 22px;
+    width: 480px;
+    margin: 0px 40px 16px;
   }
 }
 
@@ -103,6 +129,13 @@
     position: absolute;
     width: 240px;
     bottom: 60px;
+    transform: translateX(-50%);
+  }
+  @media(min-width:600px) and (max-width: 1200px){
+    font-size: 20px;
+    position: absolute;
+    width: 300px;
+    bottom: 50px;
     transform: translateX(-50%);
   }
 }
