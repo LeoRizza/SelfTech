@@ -1,4 +1,3 @@
-console.log("hola")
 const dataCarrusel = [
   {
     img1: "./img/img_seccion3/logo_caso1.png",
@@ -99,14 +98,11 @@ function avanzar_carrusel() {
 
 function truncarTexto(texto, limite) {
   if (texto.length > limite) {
-    // Buscar el primer espacio después del límite
     var indiceEspacio = texto.indexOf(' ', limite);
 
-    // Truncar el texto y agregar "..."
     if (indiceEspacio !== -1) {
       texto = texto.substring(0, indiceEspacio) + '...';
     } else {
-      // Si no hay espacio después del límite, simplemente truncar
       texto = texto.substring(0, limite) + '...';
     }
   }
@@ -152,13 +148,10 @@ function actualizarAlturaCasosExito(incremento_caja,caja_exito){
   const casos_exito_movile_styles = window.getComputedStyle(caja_exito);
   const alturaActual = casos_exito_movile_styles.getPropertyValue("height");
 
-  // Parsea la altura actual a un número (removiendo "px" al final)
   const alturaActualNum = parseFloat(alturaActual.replace("px", ""));
 
-  // Calcula la nueva altura sumando el incremento
   const nuevaAltura = alturaActualNum + incremento_caja;
 
-  // Asigna la nueva altura al elemento
   caja_exito.style.height = nuevaAltura + "px";
 }
 iniciar()
