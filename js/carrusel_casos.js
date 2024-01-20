@@ -162,3 +162,7 @@ function actualizarAlturaCasosExito(incremento_caja,caja_exito){
   caja_exito.style.height = nuevaAltura + "px";
 }
 iniciar()
+window.addEventListener('resize', function() {
+  resetear_estilos_carrusel()
+  cargar_carrusel(posicion_carrusel)
+});
