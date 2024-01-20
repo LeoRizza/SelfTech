@@ -166,3 +166,20 @@ window.addEventListener('resize', function() {
   resetear_estilos_carrusel()
   cargar_carrusel(posicion_carrusel)
 });
+const formulario_mano_animar = document.getElementById("formulario_mano_animar")
+let ultimaDireccionScroll = '';
+let ultimoScroll = 0
+window.addEventListener("scroll", function(){
+  const desplazamientoVertical = 100;
+    if (ultimaDireccionScroll !== 'arriba') {
+      // Aplica desplazamiento vertical si hay movimiento hacia arriba
+      formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
+      ultimaDireccionScroll = 'arriba';
+    } else {
+      // Detiene el desplazamiento si no hay movimiento hacia arriba
+      formulario_mano_animar.style.transform = 'translateY(0)';
+      ultimaDireccionScroll = 'abajo';
+    }
+  
+})
+
