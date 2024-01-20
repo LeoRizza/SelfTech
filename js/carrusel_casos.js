@@ -28,7 +28,18 @@ const text_contenido = document.querySelectorAll(".caso_text_contenido")
 const text_autor = document.querySelectorAll(".caso_text_autor")
 const text_empresa = document.querySelectorAll(".caso_text_empresa")
 const casos_contenido_movil = document.getElementById("casos_contenido_movil")
+const casos_exito_movile_id = document.getElementById("casos_exito_movile_id")
+const casos_contenido_movil_mas = document.getElementById("casos_contenido_movil_mas")
+const casos_exito_contenido_leer_id = document.getElementById("casos_exito_contenido_leer_id")
+
+
+const casos_exito_box_desktop = document.getElementById("casos_exito_box_desktop")
 const casos_contenido_desktop = document.getElementById("casos_contenido_desktop")
+const casos_exito_leer_mas = document.getElementById("casos_contenido_desktop_mas")
+const casos_exito_contenido_leer_desktop_id = document.getElementById("casos_exito_contenido_leer_desktop_id")
+
+
+
 let posicion_carrusel = 0
 
 
@@ -46,8 +57,9 @@ const cargar_carrusel = (posicion) => {
     if (elemento.scrollHeight > elemento.clientHeight) {
       mostrarLeerMas(true)
     }
-    const casos_exito_contenido_leer_id= document.getElementById("casos_exito_contenido_leer_id")
-    casos_exito_contenido_leer_id.innerText = truncarTexto(elemento.innerText,80)
+
+    casos_exito_contenido_leer_id.innerText = truncarTexto(elemento.innerText, 80)
+    casos_exito_contenido_leer_desktop_id.innerText = truncarTexto(elemento.innerText, 80)
 
 
   })
@@ -61,9 +73,11 @@ const cargar_carrusel = (posicion) => {
 
 }
 
-function resetear_estilos_carrusel(){
-  casos_contenido_movil.style.overflow
+function resetear_estilos_carrusel() {
+  casos_contenido_movil.style.overflow="hidden"
   casos_exito_movile_id.style.height = "";
+  casos_exito_box_desktop.style.height = "";
+  casos_contenido_desktop.style.overflow="hidden"
   mostrarLeerMas(false)
 }
 
@@ -100,29 +114,42 @@ function truncarTexto(texto, limite) {
 }
 
 
-function iniciar(){
+function iniciar() {
   mostrarLeerMas(false)
   cargar_carrusel(posicion_carrusel)
 
 }
 
-function mostrarLeerMas(mostrar){
+function mostrarLeerMas(mostrar) {
   console.log(mostrar)
-  const casos_contenido_movil_mas = document.getElementById("casos_contenido_movil_mas")  
-  casos_contenido_movil.style.display=mostrar?"none":"block"
-  casos_contenido_movil_mas.style.display=mostrar?"flex":"none"
 
+  casos_contenido_movil.style.display = mostrar ? "none" : "block"
+  casos_contenido_movil_mas.style.display = mostrar ? "flex" : "none"
+  casos_exito_leer_mas.style.display = mostrar ? "flex" : "none"
+  casos_contenido_desktop.style.display = mostrar ? "none" : "block"
 }
 
-function leer_mas(){
+function leer_mas() {
 
 
 
   mostrarLeerMas(false)
-  const incremento_caja=casos_contenido_movil.scrollHeight - casos_contenido_movil.clientHeight
+  const incremento_caja = casos_contenido_movil.scrollHeight - casos_contenido_movil.clientHeight
+  
+  actualizarAlturaCasosExito(incremento_caja,casos_exito_movile_id)
+  const incremento_cajadesktop = casos_contenido_desktop.scrollHeight - casos_contenido_desktop.clientHeight
 
-  const casos_exito_movile_id = document.getElementById("casos_exito_movile_id")
-  const casos_exito_movile_styles = window.getComputedStyle(casos_exito_movile_id);
+  actualizarAlturaCasosExito(incremento_cajadesktop,casos_exito_box_desktop)
+
+
+  casos_contenido_movil.style.overflow = "visible"
+  casos_contenido_desktop.style.overflow = "visible"
+
+}
+
+function actualizarAlturaCasosExito(incremento_caja,caja_exito){
+
+  const casos_exito_movile_styles = window.getComputedStyle(caja_exito);
   const alturaActual = casos_exito_movile_styles.getPropertyValue("height");
 
   // Parsea la altura actual a un número (removiendo "px" al final)
@@ -132,8 +159,6 @@ function leer_mas(){
   const nuevaAltura = alturaActualNum + incremento_caja;
 
   // Asigna la nueva altura al elemento
-  casos_exito_movile_id.style.height = nuevaAltura + "px";
-  casos_contenido_movil.style.overflow="visible"
-
+  caja_exito.style.height = nuevaAltura + "px";
 }
 iniciar()

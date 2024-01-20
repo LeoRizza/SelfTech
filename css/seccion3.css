@@ -1,6 +1,7 @@
 :root {
   --casos_testimonio_nlineas: 4;
 }
+
 body {
   background-color: #1D1D1B;
 }
@@ -86,6 +87,13 @@ body {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 
+  @media(min-width:1200px) {
+    height: 100%;
+    position: relative;
+    align-self: self-start;
+    padding-top: 40px;
+  }
+
   @media(min-width:600px) and (max-width: 1200px) {
     width: 580px;
   }
@@ -112,6 +120,7 @@ body {
   line-height: 28px;
   max-height: calc(28px * var(--casos_testimonio_nlineas));
   overflow: hidden;
+
   @media(max-width:600px) {
     font-size: 14px;
     width: 250px;
@@ -129,15 +138,17 @@ body {
     overflow: hidden;
   }
 }
-.casos_exito_leer_mas{
-  display: flex; 
+
+.casos_exito_leer_mas {
+  display: flex;
   flex-direction: column;
 }
 
-.casos_exito_contenido_leer_mas{
+.casos_exito_contenido_leer_mas {
   font-weight: 600;
   font-size: 22px;
   line-height: 28px;
+
   @media(max-width:600px) {
     font-size: 14px;
     width: 250px;
@@ -156,9 +167,11 @@ body {
   font-size: 14px;
   font-weight: 200;
   margin-bottom: 10px;
+
   @media(max-width:600px) {
     margin-bottom: 30px;
   }
+
   @media(min-width:600px) and (max-width: 1200px) {
     margin-bottom: 30px;
   }
@@ -188,12 +201,16 @@ body {
   }
 }
 
-.casos_exito_bottom{
+.casos_exito_bottom {
   width: 300px;
   position: absolute;
   bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
+
+  @media(min-width:1200px) {
+    bottom: 20px;
+  }
 }
 
 .casos_exito_flecha {
