@@ -1,3 +1,5 @@
+/* RESET */
+
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +20,77 @@ body{
     color: #FFFFFF;
 }
 
+/* SCROLLBAR */
+
+.body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background: #338B86;
+    border-radius: 4px;
+}
+
+.body::-webkit-scrollbar-thumb:active {
+    background-color: #338B86;
+}
+
+.body::-webkit-scrollbar-thumb:hover {
+    background: #2b706d;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.0);
+}
+
+.body::-webkit-scrollbar-track {
+    background: rgba(29, 29, 27, 0.0);
+    border-radius: 4px;
+}
+
+.body::-webkit-scrollbar-track:hover, 
+.body::-webkit-scrollbar-track:active {
+    background: rgba(29, 29, 27, 0.0);
+}
+
+/* PARTICULAS */
+
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+/* ONDAS DE FONDO */
+
+.divOndas{
+    width: 100vw;
+    display: inline-block;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.onda1{
+    background-image: url(../img/ondas-1.png);
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    margin-top: -50vh;
+    overflow: hidden;
+    opacity: 0.1;
+}
+
+.onda2{
+    background-image: url(../img/ondas-2.png);
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    margin-top: 60vh;
+    overflow: hidden;
+    opacity: 0.5;
+}
+
 /*NAVBAR*/
 
 .header{
@@ -28,17 +101,14 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* border-bottom-style: solid;  */
-    /* border-bottom-color: #338B86; */
     background: linear-gradient(180deg, rgba(63, 167, 161, 0.2), rgba(51, 139, 134, 0.0) );
     border-bottom-width: 1px;
     font-weight: bold;
     position: fixed;
-    background-color: rgba(29, 29, 27, 0.4);
-    backdrop-filter: blur(15px);
 }
 
 .header.blur{
+    transition: .2s;
     background-color: rgba(29, 29, 27, 0.4);
     backdrop-filter: blur(15px);
 }
@@ -118,7 +188,7 @@ body{
 
 .logo-nav:hover{
     transition: .5s;
-    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7)); 
+    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7));
 
 }
 
@@ -132,134 +202,191 @@ body{
 
 /* MAIN SECTION */
 
+.main-page{
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 100px;
+    position: relative;
+    z-index: 99;
+}
+
 .cotizaBtn{
     text-decoration: none;
     color: #FFFFFF;
     border-radius: 24px;
     font-weight: 600;
     padding: 3.5%;
+    margin-left: -7%;
     transition: .7s;
     background: linear-gradient(120deg, var(--c1, #245a57), var(--c2, #338B86) 51%, var(--c1, #245a57)) var(--x, 0)/ 200%;
     background-size: 300% 100%;
-    margin-left: 70px;
+    /* margin-left: 70px; */
 }
 
 .cotizaBtn:hover, .nav-button2:hover{
     --x: 100%;
-    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7)); 
+    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7));
 
 }
 
-.main-page{
-    width: 100%;
-    max-width: fit-content;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+/* TITULO */
 
 .title{
+    display: flex;
     width: 50vw;
     height: 10rem;
     z-index: 20;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 1.5%;
 }
 
 .main-title{
-    width: 100%;
-    margin-left: 70px;
+    margin-left: 7%;
     color: #FFF;
     font-family: Montserrat;
     font-size: 2.25rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
+.typed{
+    background: linear-gradient(120deg, #245a57, #338B86);
+    background-clip: text;
+    color: transparent;
+}
+
+/* IMAGEN PRINCIPAL */
+
 .main-img{
-    width: 50vw;
-    animation: 1s infinite alternate upndown2;
-    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    width: 47vw;
+    height: 100vh;
+    position: relative;
 }
 
 .main-img:hover{
     transition: 1s;
-    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7)); 
+    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7));
 }
 
 .caraSt{
     width: 100%;
-    overflow: hidden;
-    flex-shrink: 0;
-    margin-top: 3rem;
-    padding-right: 40px;
+    padding-right: 15px;
+    position: absolute;
+}
+
+.main1{
     z-index: 10;
+    animation: 3s infinite alternate linear rightnleft;
 }
 
-.typing{
-    padding-right: 5px;
-    display: block;
-    color: #2c7773;
-    border-right: .15em solid #ffffff;
-    width: 12ch;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typed 4s steps(12), blink .5s infinite step-end alternate;
+.main2{
+    z-index: 12;
+    animation: 3s infinite alternate linear leftnright;
 }
 
-@keyframes typed {
-    from {
-        width: 0;
-    }
-    to {
-        width: 50%;
-    }
+.main3{
+    z-index: 15;
 }
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
-}
+
+/* SCROLL DOWN ANIMADO */
 
 .scroll-down{
-    margin-bottom: 3%;
-    align-self: flex-end;
-    color: #FFFFFF;
+    position: absolute;
+    color: #338B86;
+    width: 17px;
+    height: 28px;
+    bottom: 80px;
+    margin: auto;
+    right: 0;
+    left: 0;
+    z-index: 150;
+    cursor: pointer;
 }
 
-@keyframes upndown {
-    from {
-        margin-bottom: 0%;
-    }
-
-    to {
-        margin-bottom: 50%;
-    }
+.scroll-down::before{
+    display: block;
+    position: relative;
+    content: "";
+    width: 25px;
+    padding: 1px;
+    height: 45px;
+    border: 3px solid #338B86;
+    border-radius: 100px;
+    box-sizing: content-box;
 }
 
-@keyframes upndown2 {
-    from {
-        margin-bottom: -.2%;
-    }
-
-    to {
-        margin-bottom: .2%;
-    }
+.scroll-down::after {
+    display: block;
+    position: relative;
+    content: "";
+    width: 20px;
+    height: 20px;
+    bottom: 45px;
+    right: 3px;
+    border-radius: 100%;
+    background-color: #338B86;
+    animation-name: scroll;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+    animation-iteration-count: infinite;
 }
 
 .scroll-down:hover{
-    color: #338B86;
+    transition: .5s;
+    filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7));
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
-    animation: 1s infinite alternate upndown;
+/* KEYFRAMES */
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+        transform: translate(50%, 0px);
+    }
+    10% {
+        transform: translate(50%, 0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(50%, 20px);
+        opacity: 0;
+    }
+}
+@keyframes upndown {
+    from {
+        margin-bottom: -1.5%;
+    }
+
+    to {
+        margin-bottom: 1.5%;
+    }
+}
+@keyframes leftnright {
+    from {
+        margin-left: -1.5%;
+    }
+
+    to {
+        margin-left: 1.5%;
+    }
+}
+@keyframes rightnleft {
+    from {
+        margin-left: 1.5%;
+    }
+
+    to {
+        margin-left: -1.5%;
+    }
 }
 
 /* RESPONSIVE - MEDIA QUERYS */
@@ -272,59 +399,95 @@ body{
     }
 }
 
-/* - TABLET - */
+/* BR */
 
-@media (max-width: 834px) {
-    .main-title{
-        color: #FFF;
-        font-family: Montserrat;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin-left: 40px;
-    }
-    .cotizaBtn{
-        margin-left: 40px;
-    }
-    .caraSt{
-        padding-right: 10px;
-    }
-    .header{
-        flex-direction: column;
-        height: 130px;
-    }
-    .logo-img{
-        margin-bottom: 5%;
-        margin-left: 0;
-    }
-    .nav-list{
-        margin-left: 0;
-        padding-left: 0;
-        justify-content: space-between;
+@media (min-width: 1205px){
+    .br{
+        display: none;
     }
 }
 
-/* - TABLET 2 - */
-
-@media (max-width: 620px) {
-    .abrir-menu{
-        display: block;
-        border: none;    
-        background-color: rgba(29, 29, 27, 0.0);
+@media (max-width: 1204px){
+    .main-title{
+        margin-left: 0;
+        margin-top: -7%;
     }
-    .abrir-menu.ocultar,.cerrar-menu.ocultar{
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
+    .cotizaBtn{
+        margin-left: -10%;
+    }
+}
+
+/* - TABLET - */
+
+@media (max-width: 834px) {
+    
+.box{
+    width: 40px;
+    height: 5%;
+}
+
+.scroll-down{
+    display: none;
+}
+
+#burguer {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 40px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+    background:#FFF;
+}
+
+#burguer, #burguer:after, #burguer:before {
+    transition: all 200ms ease-in-out;
+    border-radius: 1px;
+    height: 3px;
+    width: 37px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+    background:#fff;
+}
+
+#burguer:before {
+    top: -10px;
+}
+#burguer:after {
+    bottom: -10px; 
+}
+
+#burguer.active {
+    transition: 0;
+    background-color: transparent;
+  }
+  #burguer.active:before, #burguer.active:after {
+    top: 0;
+  }
+  
+  #burguer.active:after {
+    transform: rotate(-45deg);
+  }
+  
+  #burguer.active:before {
+    transform: rotate(45deg);
+  }
+
+    .onda2{
+        margin-top: 70vh;
+        opacity: 0.5;
     }
     .caraSt{
         padding: 0;
     }
     .header{
         flex-direction: row;
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
         justify-content: space-around;
     }
     .align{
@@ -336,34 +499,50 @@ body{
     .logo-img{
         align-self: center;
         margin-bottom: 0;
+        margin-left: 0;
     }
     .main-page{
+        width: 100%;
         flex-direction: column;
-        padding-top: 50%;
+        justify-content: space-around;
+        padding-top: 100px;
     }
     .title{
         width: 100%;
-        flex-shrink: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding-top: 10vh;
+        position: relative;
     }
     .main-title{
         width: 90vw;
-        height: 9.6875rem;
-        color: #FFF;
-        font-family: Montserrat;
-        font-size: 2rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin-bottom: 0;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: 0;
     }
     .cotizaBtn{
-        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .main-img{
+        position: relative;
+        width: 90%;
+        height: 100%;
     }
 
     .nav.visible{
         opacity: 1;
         visibility: visible;
         transition: .5s;
+    }
+    .mobile{
+        transition: .2s;
+        background: linear-gradient(180deg, rgba(63, 167, 161, 0.2), rgba(29, 29, 27, 0.970) );
+        border-bottom: solid 3px #338B86;
+        height: 103px;
     }
 
     .nav{
@@ -375,12 +554,12 @@ body{
         align-items: center;
         position: absolute;
         gap: 2rem;
-        top: 130px;
+        top: 103px;
         right: 0;
         bottom: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(29, 29, 27, 0.9);
+        background-color: rgba(29, 29, 27, 0.970);
         justify-content: start;
         z-index: 30;
     }
@@ -392,25 +571,24 @@ body{
         justify-content: center;
         gap: 2rem;
         font-size: 1.3rem;
+        margin-left: 0;
+        padding-left: 0;
     }
 
     .cerrar-menu{
         display: block;
         visibility: hidden;
         opacity: 0;
-        border: none;    
+        border: none;
         background-color: rgba(29, 29, 27, 0.0);
         transition: .5s;
+        cursor: not-allowed;
     }
     .cerrar-menu.visible{
         visibility: visible;
         opacity: 1;
         transition: .5s;
-    }
-
-    .main-img{
-        width: 90%;
-        animation: none;
+        cursor: not-allowed;
     }
 
     .menuOpenBtn{
@@ -429,6 +607,9 @@ body{
     }
     .main-img{
         margin-top: 2%;
+    }
+    .onda2{
+        margin-top: 70vh;
     }
 }
 
@@ -451,18 +632,8 @@ body{
     .main-title{
         width: 80vw;
         font-size: 1.7rem;
-        margin-bottom: 0;
     }
     .logo-img{
         height: 50px;
-    }
-    .main-page{
-        padding-top: 35%;
-    }
-}
-
-@media (min-height: 844px){
-    .main-page{
-        padding-top: 0;
     }
 }

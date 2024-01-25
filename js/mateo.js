@@ -1,24 +1,158 @@
+// ANIMACIONES AL SCROLLEAR
+
+AOS.init();
+
+// DECLARACIÓN DE VARIABLES
+
 let nav = document.querySelector("#nav");
-let abrir = document.querySelector("#abrir")
-let cerrar = document.querySelector("#cerrar")
+let header = document.querySelector("#header")
+let burguer = document.querySelector("#burguer")
 
-abrir.addEventListener("click", ()=>{
-    nav.classList.add("visible");
-    abrir.classList.add("ocultar");
-    cerrar.classList.add("visible");
-})
+// MENÚ HAMBURGUESA
 
-cerrar.addEventListener("click", ()=>{
-    nav.classList.remove("visible");
-    abrir.classList.remove("ocultar");
-    cerrar.classList.remove("visible");
-})
-
-
-$(window).scroll(function(){
-    if ($(this).scrollTop() > 100) {
-        $('.header').addClass("blur");
-    } else {
-        $(".header").removeClass("blur");
-    }
+burguer.addEventListener("click", ()=> {
+    burguer.classList.toggle("active");
+    nav.classList.toggle("visible");
+    header.classList.toggle("mobile");
 });
+
+// BLUR DEL NAVBAR AL SCROLLEAR
+
+window.onscroll = function() {
+    let y = window.scrollY;
+    if (y>5) {
+        header.classList.add("blur");
+    } else {
+        header.classList.remove("blur");
+    }
+};
+
+// ANIMACIÓN DE TIPEO EN TÍTULO
+
+let typed = new Typed('.typed', {
+    strings: ['fidelización', 'contención', 'optimización'],
+    typeSpeed: 75,
+    startDelay: 300,
+    backSpeed: 75,
+    smartBackspace: true,
+    shuffle: false,
+    backDelay: 1500,
+    loop: true,
+    loopCount: false,
+    showCursor: true,
+});
+
+// PARTICULAS ANIMADAS DE FONDO
+
+particlesJS(
+    {
+        "particles": {
+          "number": {
+            "value": 50,
+            "density": {
+              "enable": true,
+              "value_area": 1000
+            }
+          },
+          "color": {
+            "value": "#338b86"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.3,
+            "random": false,
+            "anim": {
+              "enable": true,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 5,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": false,
+              "mode": "repulse"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      }
+);

@@ -11,19 +11,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style-mateo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Selftech AI</title>
+    <link rel="shortcut icon" href="./img/isotipo.png">
 </head>
 
-<body>
-    <!-- Banner -->
-    <header class="header">
-        <button id="abrir" class="abrir-menu">
-            <img src="./img/menuopen.png" class="menuOpenBtn" alt="Menú">
-        </button>
+<body class="body">
+    <div id="particles-js"></div>
+    <div class="divOndas onda1"></div>
+    <div class="divOndas onda2"></div>
+    <a class="scroll-down" href="#servicios">
+    </a>
+    <!-- HEADER - NAVBAR -->
+    <header id="header" class="header">
+        <div class="box">
+        </div>
         <a class="logo-nav" href="index-mateo.html"><img class="logo-img" src="./img/logo-selftech-blanco.png" alt="Self-Tech Logo"></a>
-        <button class="cerrar-menu" id="cerrar">
-            <img src="./img/menuclose.png" class="menuCloseBtn" alt="Menú">
-        </button>
+        <div class="box">
+            <span id="burguer"></span>
+        </div>
         <nav class="nav" id="nav">
             <ul class="nav-list">
                 <li class="li"><a class="nav-button" href="#servicios">Servicios</a></li>
@@ -33,18 +39,21 @@
             </ul>
         </nav>
     </header>
+    <!-- PÁGINA PRINCIPAL -->
     <section class="main-page">
-        <div class="title">
-            <h2 class="main-title">Potenciamos tu comunidad, priorizando la <span class="typing">fidelización</span></h2>
+        <div data-aos="zoom-in" data-aos-duration="1000" class="title">
+            <h2 class="main-title">Potenciamos <br class="br"> tu comunidad, <br class="br"> priorizando la <br class="br"> <span class="typed"></span></h2>
             <a class="cotizaBtn" href="#header">Cotiza una auditoria</a>
         </div>
-        <!-- <a href="#servicios" class="scroll-down"><span class="material-symbols-outlined">
-            keyboard_double_arrow_down
-            </span></a> -->
         <div class="main-img">
-            <img class="caraSt" src="./img/caraDigitalSelftech.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main1" src="./img/caraDigitalSelftech-capa1.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main2" src="./img/caraDigitalSelftech-capa2.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main3" src="./img/caraDigitalSelftech-capa3.png" alt="">
         </div>
     </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="./js/mateo.js"></script>
 </body>
 
