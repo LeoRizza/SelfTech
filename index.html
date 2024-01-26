@@ -6,77 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Selftech AI</title>
+    <link rel="shortcut icon" href="./img/isotipo.png">
 </head>
 
-<body>
-    <!-- Banner -->
-    <div class="banner">
-        <header>
-            <a href="logo"><img src="img/SelfTechLogo.svg" alt="Self-Tech Logo"></a>
-            <button id="abrir" class="abrir-menu">
-                <img src="/img/menu.svg" class="menuBtn" alt="Menú">
-            </button>
-            <nav class="nav" id="nav">
-                <button class="cerrar-menu" id="cerrar">
-                    <img src="/img/close.svg" class="menuBtn" alt="Menú">
-                </button>
-                <ul class="nav-list">
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#testimonios">Casos de exito</a></li>
-                    <li><a href="#about">Conócenos</a></li>
-                    <li><a href="#contacto">Contáctanos</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div>
-            <div class="title">
-                <h2>Potenciamos tu comunidad, priorizando la fidelización</h2>
-                <button class="cotizaBtn">Cotiza una auditoria</button>
-            </div>
-            <img src="./img/bg.jpg" alt="">
+<body class="body">
+    <div id="particles-js"></div>
+    <div class="divOndas onda1"></div>
+    <div class="divOndas onda2"></div>
+    <a class="scroll-down" href="#servicios">
+    </a>
+    <!-- HEADER - NAVBAR -->
+    <header id="header" class="header">
+        <div class="box">
         </div>
-    </div>
+        <a class="logo-nav" href="index-mateo.html"><img class="logo-img" src="./img/logo-selftech-blanco.png"
+                alt="Self-Tech Logo"></a>
+        <div class="box">
+            <span id="burguer"></span>
+        </div>
+        <nav class="nav" id="nav">
+            <ul class="nav-list">
+                <li class="li"><a class="nav-button" href="#servicios">Servicios</a></li>
+                <li class="li"><a class="nav-button" href="#testimonios">Casos de exito</a></li>
+                <li class="li"><a class="nav-button" href="#about">Conócenos</a></li>
+                <li class="li"><a class="nav-button2" href="#contacto">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- PÁGINA PRINCIPAL -->
+    <section class="main-page">
+        <div data-aos="zoom-in" data-aos-duration="1000" class="title">
+            <h2 class="main-title">Potenciamos <br class="br"> tu comunidad, <br class="br"> priorizando la <br
+                    class="br"> <span class="typed"></span></h2>
+            <a class="cotizaBtn" href="#header">Cotiza una auditoria</a>
+        </div>
+        <div class="main-img">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main1"
+                src="./img/caraDigitalSelftech-capa1.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main2"
+                src="./img/caraDigitalSelftech-capa2.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main3"
+                src="./img/caraDigitalSelftech-capa3.png" alt="">
+        </div>
+    </section>
     <!-- Servicios -->
     <section class="servicios" id="servicios">
-        <div class="containerServicios">
-            <div class="boxServicios">
-                <div>
-                    <h2>Incrementamos tu presencia digital</h2>
-                </div>
-            </div>
-            <div class="boxServicios">
-                <div>
-                    <h2>Servicios de automated interactions</h2>
-                </div>
-            </div>
-            <h3>descubre mas</h3>
-        </div>
         <div>
+            <div class="containerServicios">
+                <div class="divServicios1">
+                    <h2>Incrementamos tu <br>Presencia Digital</h2>
+                    <div class="boxServicios">
+                        <p class="serviciosText">Educamos a tu comunidad, creamos entornos envolventes y optimizamos tu
+                            posición
+                            en la web para aumentar tu impacto online y fidelizar a tus clientes. Destacá en el mundo
+                            digital
+                            elevando tu presencia con nosotros.</p>
+                    </div>
+                    <img class="manosD scrollEffect" src="./img/mano derecha.png" alt="mano derecha">
+                </div>
+                <div class="ondas">
+                    <img class="onda1" src="./img/ondas-1.png" alt="">
+                    <img class="onda2" src="./img/ondas-2.png" alt="">
+                </div>
+                <div class="divServicios2">
+                    <h2>Servicios de <br> Automated Interactions</h2>
+                    <div class="boxServicios">
+                        <p class="serviciosText">Libera tiempo y fortalece la relación con tu audiencia a través de
+                            estrategias
+                            de interacciones inteligentes automatizaciónes. Optimiza tus interacciones con SelfTech.
+                        </p>
+                    </div>
+                    <img class="manosI scrollEffect" src="./img/vector mano izquierda 1.png" alt="mano izquierda">
+                </div>
+            </div>
+            <h3 class="btn">Descubre mas</h3>
+        </div>
+        <div class="workflow360">
             <h2>¿Porque eligen SelfTech AI?</h2>
-            <div>
-                <div>
-                    <h2>#1 Analisis</h2>
+            <h4>Workflow 360°</h4>
+        </div>
+        <div class="serviciosDetalle1">
+            <div class="serviciosDetalle2">
+                <div class="detallesBx detallesPhone2">
+                    <div class="detalleBxTitles">
+                        <img src="./img/icono1.png" alt="">
+                        <h5>#1 Analisis</h5>
+                    </div>
                     <p>Comprendemos a fondo las necesidades y desafios de la empresa. Interiorizando quien es su
                         comunidad</p>
                 </div>
-                <div>
-                    <h2>#2 Diseño</h2>
+                <div class="detallesBx detallesPhone1">
+                    <div class="detalleBxTitles">
+                        <img src="./img/icono2.png" alt="">
+                        <h5>#2 Diseño</h5>
+                    </div>
                     <p>Planteamos la estructura de los ecosistemas y plantillas mientras ideamos las automatizaciones
                         necesarias</p>
                 </div>
-                <div>
-                    <h2>#3 Desarrollo</h2>
+                <div class="detallesBx detallesPhone2">
+                    <div class="detalleBxTitles">
+                        <img src="./img/icono3.png" alt="">
+                        <h5>#3 Desarrollo</h5>
+                    </div>
                     <p>Construimos meticulosamente las soluciones siguiendo los estándares de calidad mas exigentes</p>
                 </div>
-                <div>
-                    <h2>#4 Seguimiento</h2>
+                <div class="detallesBx detallesPhone1">
+                    <div class="detalleBxTitles">
+                        <img src="./img/icono4.png" alt="">
+                        <h5>#4 Seguimiento</h5>
+                    </div>
                     <p>Realizamos pruebas exhaustivas para garantizar que la solucion funcione de manera óptima y sin
                         problemas</p>
                 </div>
-                <div>
-                    <h2>#5 Optimizacion y adaptacion</h2>
+                <div class="detallesBx detallesPhone2">
+                    <div class="detalleBxTitles">
+                        <img src="./img/icono5.png" alt="">
+                        <h5>#5 Optimizacion y adaptacion</h5>
+                    </div>
                     <p>Monitoreamos la eficiencia ademas de realizar ajustes, actualizaciones ymejores segun sea
                         necesario</p>
                 </div>
@@ -85,74 +139,130 @@
     </section>
     <!-- Clientes -->
     <!-- Casos de éxito -->
-    <section class="testimonios" id="testimonios">
-        <h2 class="testimoniosTitulo">Que dicen de nosotros?</h2>
-        <div class="testimoniosContenedor">
-            <div class="testimonioBx">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ad culpa expedita ducimus
-                        corrupti, nesciunt voluptas inventore, sit, porro provident veritatis quisquam animi dolorum qui
-                        dicta sequi consequatur a nisi?</p>
-                    <h3>Carla</h3>
-                </div>
+<!--     <div style="background-color: red;width: 300px;height: 300px;"></div>
+    <div style="background-color: red;width: 300px;height: 300px;"></div> -->
+    <section class="casos_exito" id="casos_exito_box_desktop">
+        <img class="casos_exito_flecha" src="./img/img_seccion3/left_button.png" alt="" onclick=retroceder_carrusel()>
+        <img src="./img/img_seccion3/logo_caso1.png" alt="" class="img_caso_logo">
+        <img class="rounded img_caso_retrato" src="./img/img_seccion3/retrato_caso1.png" alt="">
+        <article class="casos_exito_box">
+            <h2 class="casos_exito_titulo">Casos de éxito</h2>
+            <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_desktop">"Estoy muy agradecido con
+                el
+                trabajo de Selftech.
+                Automatizaron varios procesos en mi empresa de manera muy eficaz, lo...</p>
+            <div class="casos_exito_leer_mas" id="casos_contenido_desktop_mas">
+
+                <p class="casos_exito_contenido_leer_mas " id="casos_exito_contenido_leer_desktop_id">"Estoy muy
+                    agradecido con
+                    el trabajo de Selftech. Automatizaron varios procesos en mi empresa...</p>
+                <p class="btn_leermas" onclick=leer_mas()>Leer Mas</p>
+
+
             </div>
-            <div class="testimonioBx">
-                <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ad culpa expedita ducimus
-                        corrupti,
-                        nesciunt voluptas inventore, sit, porro provident veritatis quisquam animi dolorum qui dicta
-                        sequi
-                        consequatur a nisi?</p>
-                    <h3>Francisco</h3>
-                </div>
+            <div class="casos_exito_bottom">
+
+                <p class="casos_exito_autor"><span class="caso_text_autor">Giovanni Rimini de </span><span
+                        class="casos_exito_autor-tipo caso_text_empresa">Ricoseller</span></p>
+                <button class="casos_exito_button">Lleguemos al éxito juntos</button>
             </div>
-        </div>
+        </article>
+        <img class="casos_exito_flecha" src="./img/img_seccion3/right_button.png" alt="" onclick=avanzar_carrusel()>
     </section>
-    <!-- Sobre -->
-    <section class="about" id="about">
-        <div class="contentAbout">
-            <h2 class="tituloAbout">Conócenos</h2>
-            <p class="textAbout">Somos una empresa en constante crecimiento, que busca consolidar, educar y fidelizar a
-                la comunidad de cada cliente que confia en nosotros.
-                La cercanía, excelencia, compromiso y dedicacion son algunos de los valores que nos caracterizan.
-                <br><br>
-                Con la ayuda de la inteligencia artificial y nuestros equipos creamos soluciones acorde a tu objetivo de
-                negocio.
-            </p>
-        </div>
-        <div class="imgAbout"><img src="manu.jpg" alt="Foto Fundador"> Manuel Santamaria</div>
-    </section>
-    <!-- Contacto -->
-    <section class="contacto" id="contacto">
-        <h2 class="tituloContacto">Auditoria 100% Bonificada</h2>
-        <div class="contactoContenedor">
-            <div class="container contactoBx">
-                <div class="row">
-                    <div class="col-3 contactoFormDiv">
-                        <form id="contacta" class="contactoForm">
-                            <label for="nombre" class="label2">Nombre</label>
-                            <input class="inputLoco form-control" type="text" id="nombre">
 
-                            <label for="celular" class="label2">Compañia</label>
-                            <input class="inputLoco form-control" type="tel" id="celular">
-
-                            <label for="email" class="label2">Email</label>
-                            <input class="inputLoco form-control" type="email" id="email" autocomplete="email">
-
-                            <label for="celular" class="label2">Telefono</label>
-                            <input class="inputLoco form-control" type="tel" id="celular">
-
-                            <button class="menuBtn2" id="consulta"> Enviar </button>
-                        </form>
-                    </div>
-                    <div class="col-3"></div>
-                </div>
+    <section class="casos_exito_movile" id="casos_exito_movile_id">
+        <article class="casos_exito_box">
+            <h2 class="casos_exito_titulo">Casos de éxito</h2>
+            <div class="casos_exito_box_images">
+                <img src="./img/img_seccion3/logo_caso1.png" alt="" class="img_caso_logo img_caso">
+                <img class="rounded img_caso_retrato img_caso" src="./img/img_seccion3/retrato_caso1.png" alt="">
             </div>
+            <div class="casos_exito_box_contenido">
+                <img class="casos_exito_flecha" src="./img/img_seccion3/left_button.png" alt=""
+                    onclick=retroceder_carrusel()>
+                <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil">"Estoy muy agradecido
+                    con el
+                    trabajo
+                    de Selftech.
+                    Automatizaron varios procesos en mi empresa de manera muy eficaz, lo...</p>
+                <div class="casos_exito_leer_mas" id="casos_contenido_movil_mas">
+
+                    <p class="casos_exito_contenido_leer_mas " id="casos_exito_contenido_leer_id">"Estoy muy agradecido
+                        con el
+                        trabajo de Selftech. Automatizaron varios procesos en mi empresa...</p>
+                    <p class="btn_leermas" onclick=leer_mas()>Leer Mas</p>
+
+
+                </div>
+
+                <img class="casos_exito_flecha" src="./img/img_seccion3/right_button.png" alt=""
+                    onclick=avanzar_carrusel()>
+            </div>
+            <div class="casos_exito_bottom">
+                <p class="casos_exito_autor"><span class="caso_text_autor">Giovanni Rimini de </span><span
+                        class="casos_exito_autor-tipo caso_text_empresa">Ricoseller</span></p>
+                <button class="casos_exito_button">Lleguemos al éxito juntos</button>
+            </div>
+        </article>
+    </section>
+
+    <section class="conocenos_section">
+        <article class="conocenos_box_text">
+            <h2 class="conocenos_text_title">Conócenos</h2>
+            <p class="conocenos_text_parrafo">Somos una empresa en constante crecimiento, que busca consolidar, educar y
+                fidelizar a la comunidad de cada cliente que confia en nosotros. <br>
+                La cercanía, excelencia, compromiso y dedicación son algunos de los valores que nos caracterizan.</p>
+            <p class="conocenos_text_parrafo">Con la ayuda de la inteligencia artificial y nuestros equipos creamos
+                soluciones
+                acorde a tu objetivo de negocio.</p>
+        </article>
+        <article class="conocenos_box_fundador">
+            <div class="conocenos_imagenes">
+                <img class="conocenos_imagenes_fundador" src="./img/img_seccion3/fundador.png" alt="">
+                <img class="conocenos_imagenes_fundador_mundo" src="./img/img_seccion3/mundo_chiki.png" alt="">
+            </div>
+            <p class="conocenos_fundador">Manuel Santamaria</p>
+            <p class="conocenos_fundador">Fundador</p>
+        </article>
+    </section>
+    <section class="formulario">
+        <div class="formulario_imagen_box formulario_imagen_box_animar" id="formulario_mano_animar">
+            <img class="formulario_imagen" src="./img/img_seccion3/mano_seccion3.png" alt="">
         </div>
+        <article class="formulario_box">
+            <div class="formulario_box">
+                <h2 class="formulario_box_titulo">Auditoría 100% Bonificada</h2>
+                <label class="formulario_box_label" for="input_nombre">Nombre</label>
+                <input class="formulario_box_input" type="text" id="input_nombre">
+                <label class="formulario_box_label" for="input_compania">Compañía</label>
+                <input class="formulario_box_input" type="text" id="input_compania">
+                <label class="formulario_box_label" for="input_email">Email</label>
+                <input class="formulario_box_input" type="text" id="input_email">
+                <label class="formulario_box_label" for="input_telefono">Teléfono</label>
+                <input class="formulario_box_input" type="text" id="input_telefono">
+                <button class="formulario_box_button">Enviar</button>
+            </div>
+        </article>
     </section>
-    <section class="footer">
-        <p class="firma">©2024 SelfTech. All rights reserved</p>
-    </section>
+    <footer class="footer">
+        <p>© 2024 SelfTech. All rights reserved.</p>
+        <div class="iconos_redes">
+            <a href="https://www.tiktok.com/@manu.santamariaa?_t=8jAtsbUaoCr&_r=1" target="_blank"><img
+                    src="./img/img_seccion3/tiktok-blanco.png" alt="logo tiktok" class="img_social">
+            </a>
+            <a href="https://youtube.com/@manu.santamariaa?si=Dy34lV8M9TiwZYez" target="_blank">
+                <img src="./img/img_seccion3/youtube-blanco.png" alt="logo youtube" class="img_social">
+            </a>
+            <a href="https://www.instagram.com/manu.santamariaa?igsh=MzRlODBiNWFlZA==" target="_blank"><img
+                    src="./img/img_seccion3/instagram-blanco.png" alt="logo instagram" class="img_social"></a>
+
+
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>

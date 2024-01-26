@@ -1,10 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 body {
     background-color: #1D1D1B;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
 }
+
+.animatedI {
+    transform: scale(1.02) translate(10px, 5px);
+    transition: transform 1s ease-in-out;
+    animation: bounce 2s infinite alternate;
+}
+
+.animatedD {
+    transform: scale(1.02) translate(-10px, 5px);
+    transition: transform 1s ease-in-out;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+
 
 .btn {
     transition: all .2s;
@@ -50,7 +71,7 @@ body {
 
 .manosD {
     transform-origin: center;
-    margin-top: 36vh;
+    margin-top: 39vh;
     position: absolute;
     z-index: 1;
     width: 455px;
@@ -61,7 +82,7 @@ body {
 
 .manosI {
     transform-origin: center;
-    margin-top: 36vh;
+    margin-top: 39vh;
     position: absolute;
     z-index: 1;
     width: 455px;
@@ -93,7 +114,6 @@ body {
     width: 25rem;
     height: 21rem;
     border-radius: 40px;
-    border: 1px solid #6CC6DA;
     background: linear-gradient(180deg, #6CC6DA 0%, #338B86 100%);
     display: flex;
     align-items: center;
@@ -208,17 +228,17 @@ body {
 .onda2 {
     width: 550px;
     left: 0;
-    transition: transform 1s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 @media (max-width: 2200px) {
     .manosD {
         left: -4vw;
-        margin-top: 27vh;
+        margin-top: 39vh;
     }
 
     .manosI {
-        margin-top: 27vh;
+        margin-top: 39vh;
         right: -2vw;
     }
 }
