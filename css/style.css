@@ -214,9 +214,9 @@ body {
 .cotizaBtn {
     text-decoration: none;
     color: #FFFFFF;
-    border-radius: 24px;
+    border-radius: 8px;
     font-weight: 600;
-    padding: 3.5%;
+    padding: 12px 10px;
     margin-left: -7%;
     transition: .7s;
     background: linear-gradient(120deg, var(--c1, #245a57), var(--c2, #338B86) 51%, var(--c1, #245a57)) var(--x, 0)/ 200%;
