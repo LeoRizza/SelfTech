@@ -228,7 +228,6 @@ body {
 .nav-button2:hover {
     --x: 100%;
     filter: drop-shadow(0 2px 5px rgba(51, 139, 134, 0.7));
-
 }
 
 /* TITULO */
@@ -1146,6 +1145,7 @@ body {
     justify-content: center;
     color: white;
     gap: 40px;
+    margin-top: 20vh;
 
     @media(max-width:1200px) {
         display: none;
