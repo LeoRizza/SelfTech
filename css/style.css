@@ -68,7 +68,7 @@ body {
 }
 
 .onda1 {
-    background-image: url(../img/ondas-1.png);
+    /* background-image: url(../img/ondas-1.png); */
     position: absolute;
     height: 500px;
     width: 100%;
@@ -78,7 +78,7 @@ body {
 }
 
 .onda2 {
-    background-image: url(../img/ondas-2.png);
+    /* background-image: url(../img/ondas-2.png); */
     position: absolute;
     height: 500px;
     width: 100%;
@@ -220,7 +220,7 @@ body {
     margin-left: -7%;
     transition: .7s;
     background: linear-gradient(120deg, var(--c1, #245a57), var(--c2, #338B86) 51%, var(--c1, #245a57)) var(--x, 0)/ 200%;
-    background-size: 300% 100%;
+    /* background-size: 300% 100%; */
     /* margin-left: 70px; */
 }
 
@@ -356,34 +356,34 @@ body {
     animation: bounce 2s infinite alternate;
 }
 
-.btn {
+.descubreBtn {
     transition: all .2s;
     user-select: none;
 }
 
-.btn:hover {
+.descubreBtn:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(55, 144, 140, 0.2);
 }
 
-.btn:active {
+.descubreBtn:active {
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(55, 144, 140, 0.2);
 }
 
-.btn::after {
+.descubreBtn::after {
     height: 100%;
     width: 100%;
     z-index: -1;
     transition: all .4s;
 }
 
-.btn:hover::after {
+.descubreBtn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
+    opacity: 100;
 }
 
-.servicios h3 {
+.descubreBtn {
     text-align: center;
     color: #FFF;
     font-family: Montserrat;
@@ -392,10 +392,11 @@ body {
     font-weight: 700;
     line-height: 100%;
     border-radius: 8px;
-    background: #37908C;
+    background-color: #37908C;
     width: 345px;
     padding: 12px;
-    margin: 0 auto;
+    display: block;
+    margin: 200px auto;
 }
 
 .manosD {
@@ -903,7 +904,7 @@ body {
         height: 12rem;
     }
 
-    .servicios h3 {
+    .descubreBtn {
         width: 178px;
         padding: 12px;
         font-size: 18px;
@@ -1025,7 +1026,7 @@ body {
         width: 100vw;
     }
 
-    .servicios h3 {
+    .descubreBtn {
         width: 178px;
         padding: 12px;
         font-size: 18px;
