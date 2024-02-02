@@ -1536,8 +1536,27 @@ body {
     color: white;
     gap: 70px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.calendly{
+    margin-right: 5%;
+
+    @media (max-width:1200px) {
+        margin-right: 0;
+    }
+}
+
+.calendly-inline-widget{
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.0);
+    border-radius: 20px;
+}
+
+.calendly-inline-widget::-webkit-scrollbar {
+    display: none;
 }
 
 .formulario_box {
@@ -1561,7 +1580,6 @@ body {
 
 .formulario_imagen_box {
     margin-left: 20px;
-    flex-grow: 4;
     display: flex;
     justify-content: center;
 
