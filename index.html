@@ -21,14 +21,13 @@
     <div id="particles-js"></div>
     <div class="divOndas onda1"></div>
     <div class="divOndas onda2"></div>
-    <a class="scroll-down" href="#servicios">
+    <a id="scroll-down" class="scroll-down" href="#servicios">
     </a>
     <!-- HEADER - NAVBAR -->
     <header id="header" class="header">
         <div class="box">
         </div>
-        <a class="logo-nav" href="index-mateo.html"><img class="logo-img" src="./img/logo-selftech-blanco.png"
-                alt="Self-Tech Logo"></a>
+        <a class="logo-nav" href="index.html"><img class="logo-img" src="./img/logo-selftech-blanco.png" alt="Self-Tech Logo"></a>
         <div class="box">
             <span id="burguer"></span>
         </div>
@@ -37,24 +36,20 @@
                 <li class="li"><a class="nav-button" href="#servicios">Servicios</a></li>
                 <li class="li"><a class="nav-button" href="#casos_exito_box_desktop">Casos de exito</a></li>
                 <li class="li"><a class="nav-button" href="#about">Conócenos</a></li>
-                <li class="li"><a class="nav-button2" href="#contacto">Contáctanos</a></li>
+                <li class="li"><a class="nav-button2" href="#auditoria">Contáctanos</a></li>
             </ul>
         </nav>
     </header>
     <!-- PÁGINA PRINCIPAL -->
     <section class="main-page">
         <div data-aos="zoom-in" data-aos-duration="1000" class="title">
-            <h2 class="main-title">Potenciamos <br class="br"> tu comunidad, <br class="br"> priorizando la <br
-                    class="br"> <span class="typed"></span></h2>
-            <a class="cotizaBtn" href="#header">Cotiza una auditoria</a>
+            <h2 class="main-title">Potenciamos <br class="br"> tu comunidad, <br class="br1"> priorizando la <br class="br"> <span class="typed"></span></h2>
+            <a class="cotizaBtn" href="#auditoria">Cotiza una auditoria</a>
         </div>
         <div class="main-img">
-            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main1"
-                src="./img/caraDigitalSelftech-capa1.png" alt="">
-            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main2"
-                src="./img/caraDigitalSelftech-capa2.png" alt="">
-            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main3"
-                src="./img/caraDigitalSelftech-capa3.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main1" src="./img/caraDigitalSelftech-capa1.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main2" src="./img/caraDigitalSelftech-capa2.png" alt="">
+            <img data-aos="zoom-in" data-aos-duration="1000" class="caraSt main3" src="./img/caraDigitalSelftech-capa3.png" alt="">
         </div>
     </section>
     <!-- Servicios -->
@@ -72,10 +67,10 @@
                     </div>
                     <img class="manosD scrollEffect" src="./img/mano derecha.png" alt="mano derecha">
                 </div>
-                <div class="ondas">
+                <!-- <div class="ondas">
                     <img class="onda1" src="./img/ondas-1.png" alt="">
                     <img class="onda2" src="./img/ondas-2.png" alt="">
-                </div>
+                </div> -->
                 <div class="divServicios2">
                     <h2>Servicios de <br> Automated Interactions</h2>
                     <div class="boxServicios">
@@ -87,7 +82,7 @@
                     <img class="manosI scrollEffect" src="./img/vector mano izquierda 1.png" alt="mano izquierda">
                 </div>
             </div>
-            <h3 class="descubreBtn">Descubre mas</h3>
+            <button class="descubreBtn" role="link" onclick="window.location='#auditoria'">Descubre mas</button>
         </div>
         <div class="workflow360">
             <h2>¿Porque eligen SelfTech AI?</h2>
@@ -164,7 +159,7 @@
 
                 <p class="casos_exito_autor"><span class="caso_text_autor">Giovanni Rimini de </span><span
                         class="casos_exito_autor-tipo caso_text_empresa">Ricoseller</span></p>
-                <button class="casos_exito_button">Lleguemos al éxito juntos</button>
+                <button class="casos_exito_button" role="link" onclick="window.location='#auditoria'">Lleguemos al éxito juntos</button>
             </div>
         </article>
         <img class="casos_exito_flecha" src="./img/img_seccion3/right_button.png" alt="" onclick=avanzar_carrusel()>
@@ -206,7 +201,7 @@
         </article>
     </section>
 
-    <section class="conocenos_section">
+    <section id="about" class="conocenos_section">
         <article class="conocenos_box_text">
             <h2 class="conocenos_text_title">Conócenos</h2>
             <p class="conocenos_text_parrafo">Somos una empresa en constante crecimiento, que busca consolidar, educar y
@@ -225,7 +220,7 @@
             <p class="conocenos_fundador">Fundador</p>
         </article>
     </section>
-    <section class="formulario">
+    <section id="auditoria" class="formulario">
         <div class="formulario_imagen_box formulario_imagen_box_animar" id="formulario_mano_animar">
             <img class="formulario_imagen" src="./img/img_seccion3/mano_seccion3.png" alt="">
         </div>

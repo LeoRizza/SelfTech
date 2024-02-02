@@ -7,6 +7,28 @@ AOS.init();
 let nav = document.querySelector("#nav");
 let header = document.querySelector("#header")
 let burguer = document.querySelector("#burguer")
+let scrolldown = document.querySelector("#scroll-down")
+
+// SCROLL DOWN
+
+window.onscroll = function () {
+    let y1 = window.scrollY;
+
+    // Manejo del primer fragmento de código
+    if (y1 > 5) {
+        header.classList.add("blur");
+    } else {
+        header.classList.remove("blur");
+    }
+
+    // Manejo del segundo fragmento de código
+    let y2 = window.scrollY;
+    if (y2 > 10) {
+        scrolldown.classList.add("goodbye");
+    } else {
+        scrolldown.classList.remove("goodbye");
+    }
+};
 
 // MENÚ HAMBURGUESA
 
@@ -18,14 +40,14 @@ burguer.addEventListener("click", () => {
 
 // BLUR DEL NAVBAR AL SCROLLEAR
 
-window.onscroll = function () {
-    let y = window.scrollY;
-    if (y > 5) {
-        header.classList.add("blur");
-    } else {
-        header.classList.remove("blur");
-    }
-};
+// window.onscroll = function () {
+//     let y = window.scrollY;
+//     if (y > 5) {
+//         header.classList.add("blur");
+//     } else {
+//         header.classList.remove("blur");
+//     }
+// };
 
 // ANIMACIÓN DE TIPEO EN TÍTULO
 
@@ -191,25 +213,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //ondas servicios
 
-document.addEventListener("DOMContentLoaded", function () {
-    let onda1 = document.querySelector('.onda1');
-    let onda2 = document.querySelector('.onda2');
+// document.addEventListener("DOMContentLoaded", function () {
+//     let onda1 = document.querySelector('.onda1');
+//     let onda2 = document.querySelector('.onda2');
 
-    const maxDesplazamiento = 20;
-    const minDesplazamiento = -20;
+//     const maxDesplazamiento = 20;
+//     const minDesplazamiento = -20;
 
-    window.addEventListener('scroll', function () {
-        let scrollPosition = window.scrollY;
+//     window.addEventListener('scroll', function () {
+//         let scrollPosition = window.scrollY;
 
-        // Calcular el desplazamiento para onda1 y limitarlo entre minDesplazamiento y maxDesplazamiento
-        let desplazamiento1 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, 20 - scrollPosition * 2));
-        onda1.style.transform = `translateY(${desplazamiento1}px)`;
+//         // Calcular el desplazamiento para onda1 y limitarlo entre minDesplazamiento y maxDesplazamiento
+//         let desplazamiento1 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, 20 - scrollPosition * 2));
+//         onda1.style.transform = `translateY(${desplazamiento1}px)`;
 
-        // Calcular el desplazamiento para onda2 y limitarlo entre minDesplazamiento y maxDesplazamiento
-        let desplazamiento2 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, -20 + scrollPosition * 2));
-        onda2.style.transform = `translateY(${desplazamiento2}px)`;
-    });
-});
+//         // Calcular el desplazamiento para onda2 y limitarlo entre minDesplazamiento y maxDesplazamiento
+//         let desplazamiento2 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, -20 + scrollPosition * 2));
+//         onda2.style.transform = `translateY(${desplazamiento2}px)`;
+//     });
+// });
 
 //carrusel
 
