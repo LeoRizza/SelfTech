@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let manosIRect = manosI.getBoundingClientRect();
         let manosDRect = manosD.getBoundingClientRect();
 
-        let rangoVerticalCentral = window.innerHeight * 0.5;
+        let rangoVerticalCentral = window.innerHeight * 0.1;
         let centroManosI = (manosIRect.top + manosIRect.bottom) / 2;
         let centroManosD = (manosDRect.top + manosDRect.bottom) / 2;
 
@@ -213,25 +213,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //ondas servicios
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     let onda1 = document.querySelector('.onda1');
-//     let onda2 = document.querySelector('.onda2');
+document.addEventListener("DOMContentLoaded", function () {
+    let waveLeo1 = document.querySelector('.waveLeo1');
+    let waveLeo2 = document.querySelector('.waveLeo2');
 
-//     const maxDesplazamiento = 20;
-//     const minDesplazamiento = -20;
+    const desplazamientoInicial = 100;
+    let tiempo1 = 0;
+    let tiempo2 = Math.PI;
+    let ultimoScroll = 0;
 
-//     window.addEventListener('scroll', function () {
-//         let scrollPosition = window.scrollY;
+    function animateWaves() {
+        // Detectar la dirección del scroll
+        let scrollActual = window.scrollY;
+        let direccionScroll = (scrollActual > ultimoScroll) ? 1 : -1;
 
-//         // Calcular el desplazamiento para onda1 y limitarlo entre minDesplazamiento y maxDesplazamiento
-//         let desplazamiento1 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, 20 - scrollPosition * 2));
-//         onda1.style.transform = `translateY(${desplazamiento1}px)`;
+        // Calcular el desplazamiento para waveLeo1 y ajustarlo al tiempo
+        let desplazamiento1 = desplazamientoInicial * Math.sin(tiempo1);
+        waveLeo1.style.transform = `translateY(${desplazamiento1 * direccionScroll}px)`;
 
-//         // Calcular el desplazamiento para onda2 y limitarlo entre minDesplazamiento y maxDesplazamiento
-//         let desplazamiento2 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, -20 + scrollPosition * 2));
-//         onda2.style.transform = `translateY(${desplazamiento2}px)`;
-//     });
-// });
+        // Calcular el desplazamiento para waveLeo2 y ajustarlo al tiempo
+        let desplazamiento2 = desplazamientoInicial * Math.sin(tiempo2);
+        waveLeo2.style.transform = `translateY(${desplazamiento2 * direccionScroll}px)`;
+
+        // Incrementar los tiempos para la próxima posición en la animación
+        tiempo1 += 0.02; // Puedes ajustar la velocidad de la animación modificando este valor
+        tiempo2 += 0.02; // Puedes ajustar la velocidad de la animación modificando este valor
+
+        // Actualizar el último scroll
+        ultimoScroll = scrollActual;
+
+        // Solicitar el próximo cuadro de animación
+        requestAnimationFrame(animateWaves);
+    }
+
+    // Iniciar la animación
+    animateWaves();
+});
+
+
 
 //carrusel
 
