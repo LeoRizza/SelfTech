@@ -213,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //ondas servicios
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
     let waveLeo1 = document.querySelector('.waveLeo1');
     let waveLeo2 = document.querySelector('.waveLeo2');
@@ -249,6 +250,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Iniciar la animación
     animateWaves();
 });
+=======
+// document.addEventListener("DOMContentLoaded", function () {
+//     let onda1 = document.querySelector('.onda1');
+//     let onda2 = document.querySelector('.onda2');
+
+//     const maxDesplazamiento = 20;
+//     const minDesplazamiento = -20;
+
+//     window.addEventListener('scroll', function () {
+//         let scrollPosition = window.scrollY;
+
+//         // Calcular el desplazamiento para onda1 y limitarlo entre minDesplazamiento y maxDesplazamiento
+//         let desplazamiento1 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, 20 - scrollPosition * 2));
+//         onda1.style.transform = `translateY(${desplazamiento1}px)`;
+
+//         // Calcular el desplazamiento para onda2 y limitarlo entre minDesplazamiento y maxDesplazamiento
+//         let desplazamiento2 = Math.min(maxDesplazamiento, Math.max(minDesplazamiento, -20 + scrollPosition * 2));
+//         onda2.style.transform = `translateY(${desplazamiento2}px)`;
+//     });
+// });
+>>>>>>> 4725eafcde663c4b08376767b45581504e03deb2
 
 
 
