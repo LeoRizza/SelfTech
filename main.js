@@ -297,7 +297,7 @@ const mostrarLeerMas = (mostrar) => {
 };
 
 const abrirVentanaEmergente = (contenido) => {
-    const ventanaEmergente = window.open('', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800px,height=500px');
+    const ventanaEmergente = window.open('', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=850px,height=600px');
 
     ventanaEmergente.document.write(`
     <html lang="es">
@@ -319,8 +319,8 @@ const abrirVentanaEmergente = (contenido) => {
                 <div class="casos_exito_bottom">
                     <p class="casos_exito_autor"><span class="caso_text_autor">${dataCarrusel[posicion_carrusel].autor}</span><span
                             class="casos_exito_autor-tipo caso_text_empresa">${dataCarrusel[posicion_carrusel].empresa}</span></p>
-                    <button class="casos_exito_button">Lleguemos al éxito juntos</button>
                 </div>
+                <button class="casos_exito_button_ventana">Lleguemos al éxito juntos</button>
             </article>
         </section>
         <button onclick="window.close()">Cerrar</button>

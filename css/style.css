@@ -613,6 +613,44 @@ body {
     background: linear-gradient(to left, #1F7667, #6CC6DA);
 }
 
+.casos_exito_button_ventana {
+    background: linear-gradient(120deg, var(--c1, #000), var(--c2, #1a1a1a) 51%, var(--c1, #000)) var(--x, 0)/ 200%;
+    background-size: 300% 100%;
+    color: white;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: .5s;
+    margin: 50px 0;
+}
+
+.casos_exito_button_ventana:hover {
+    --x: 100%;
+    background-color: #FFF;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 10px #fff;
+}
+
+.casos_exito_button_ventana:active {
+    transform: translateY(-2px);
+    box-shadow: 0 2.5px 5px #fff;
+}
+
+.casos_exito_button_ventana::after {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.casos_exito_button_ventana:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 100;
+}
+
 .casos_exito {
     height: 300px;
     background: linear-gradient(to left, #1F7667, #6CC6DA);
@@ -693,7 +731,7 @@ body {
 
 .casos_exito_button {
     background: linear-gradient(120deg, var(--c1, #000), var(--c2, #1a1a1a) 51%, var(--c1, #000)) var(--x, 0)/ 200%;
-    /* background-size: 300% 100%; */
+    background-size: 300% 100%;
     color: white;
     padding: 0.5vw;
     font-weight: 700;
