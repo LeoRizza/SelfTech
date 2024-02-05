@@ -689,9 +689,9 @@ body {
 
 .casos_exito_button {
     background: linear-gradient(120deg, var(--c1, #000), var(--c2, #1a1a1a) 51%, var(--c1, #000)) var(--x, 0)/ 200%;
-    background-size: 300% 100%;
+    /* background-size: 300% 100%; */
     color: white;
-    padding: 1rem;
+    padding: 0.5vw;
     font-weight: 700;
     font-size: 20px;
     border-radius: 8px;
