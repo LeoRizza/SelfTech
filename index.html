@@ -143,13 +143,13 @@
         <article class="casos_exito_box">
             <h2 class="casos_exito_titulo">Casos de éxito</h2>
             <div class="casos_exito_leer_mas" id="casos_contenido_desktop_mas">
-                <p class="casos_exito_contenido_leer_mas " id="casos_exito_contenido_leer_mas">Estoy muy agradecido con el trabajo de Selftech. Automatizaron...</p>
+                <p class="casos_exito_contenido_leer_mas" id="casos_exito_contenido_leer_mas"></p>
                 <p class="btn_leermas" id="btn_leermas">Leer Más</p>
             </div>
             <div class="casos_exito_bottom">
                 <p class="casos_exito_autor"><span class="caso_text_autor">Giovanni Rimini de </span><span
                         class="casos_exito_autor-tipo caso_text_empresa">Ricoseller</span></p>
-                <button class="casos_exito_button" role="link" onclick="window.location='#auditoria'">Lleguemos al éxito juntos</button>
+                <button class="casos_exito_button" id="casos_exito_button" onclick="abrirModal()">Lleguemos al éxito juntos</button>
             </div>
         </article>
         <img class="casos_exito_flecha" src="./img/img_seccion3/right_button.png" alt="" onclick="avanzar_carrusel()">
@@ -165,18 +165,44 @@
             <div class="casos_exito_box_contenido">
                 <img class="casos_exito_flecha" src="./img/img_seccion3/left_button.png" alt="" onclick="retroceder_carrusel()">
                 <div class="casos_exito_leer_mas" id="casos_contenido_movil_mas">
-                    <p class="casos_exito_contenido_leer_mas " id="casos_exito_contenido_leer_mas"></p>
-                    <button class="btn_leermas" id="btn_leermas">Leer Más</button>
+                    <p class="casos_exito_contenido_leer_mas" id="casos_exito_contenido_leer_mas_movil"></p>
+                    <button class="btn_leermas" id="btn_leermas_movil">Leer Más</button>
                 </div>
                 <img class="casos_exito_flecha" src="./img/img_seccion3/right_button.png" alt="" onclick="avanzar_carrusel()">
             </div>
             <div class="casos_exito_bottom">
                 <p class="casos_exito_autor"><span class="caso_text_autor">Giovanni Rimini de </span><span
                         class="casos_exito_autor-tipo caso_text_empresa">Ricoseller</span></p>
-                <button class="casos_exito_button">Lleguemos al éxito juntos</button>
+                <button class="casos_exito_button" id="casos_exito_button_movil">Lleguemos al éxito juntos</button>
             </div>
         </article>
     </section>
+    
+    <!-- Modal -->
+    <div id="casos_exito_modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <section class="casos_exito_ventana">
+                <article class="casos_exito_box">
+                    <h2 class="casos_exito_titulo">Casos de éxito</h2>
+                    <div class="casos_exito_box_images">
+                        <img src="./img/img_seccion3/logo_caso1.png" alt="" class="img_caso_logo img_caso">
+                        <img class="rounded img_caso_retrato img_caso" src="./img/img_seccion3/retrato_caso1.png" alt="">
+                    </div>
+                    <div class="casos_exito_box_contenido">
+                        <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil"></p>
+                    </div>
+                    <div class="casos_exito_bottom">
+                        <p class="casos_exito_autor"><span class="caso_text_autor"></span><span
+                                class="casos_exito_autor-tipo caso_text_empresa"></span></p>
+                    </div>
+                    <button class="casos_exito_button_ventana" id="casos_exito_button_ventana">Lleguemos al éxito juntos</button>
+                </article>
+            </section>
+        </div>
+    </div>
+
+    <!-- conocenos section -->
 
     <section id="about" class="conocenos_section">
         <article class="conocenos_box_text">
