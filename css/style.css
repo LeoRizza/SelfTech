@@ -609,6 +609,10 @@ body {
 
 /*------------------------------------------YESICA------------------------------------------*/
 
+.casos_exito_ventana {
+    background: linear-gradient(to left, #1F7667, #6CC6DA);
+}
+
 .casos_exito {
     height: 300px;
     background: linear-gradient(to left, #1F7667, #6CC6DA);

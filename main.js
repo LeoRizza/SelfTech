@@ -300,10 +300,33 @@ const abrirVentanaEmergente = (contenido) => {
     const ventanaEmergente = window.open('', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800px,height=500px');
 
     ventanaEmergente.document.write(`
-        <!-- ... -->
-        <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil">${contenido}</p>
-        <!-- ... -->
-    `);
+    <html lang="es">
+    <head>
+        <title>Leer Más</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+    <body>
+        <section class="casos_exito_ventana">
+            <article class="casos_exito_box">
+                <h2 class="casos_exito_titulo">Casos de éxito</h2>
+                <div class="casos_exito_box_images">
+                    <img src="${dataCarrusel[posicion_carrusel].img1}" alt="" class="img_caso_logo img_caso">
+                    <img class="rounded img_caso_retrato img_caso" src="${dataCarrusel[posicion_carrusel].img2}" alt="">
+                </div>
+                <div class="casos_exito_box_contenido">
+                    <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil">${contenido}</p>
+                </div>
+                <div class="casos_exito_bottom">
+                    <p class="casos_exito_autor"><span class="caso_text_autor">${dataCarrusel[posicion_carrusel].autor}</span><span
+                            class="casos_exito_autor-tipo caso_text_empresa">${dataCarrusel[posicion_carrusel].empresa}</span></p>
+                    <button class="casos_exito_button">Lleguemos al éxito juntos</button>
+                </div>
+            </article>
+        </section>
+        <button onclick="window.close()">Cerrar</button>
+    </body>
+    </html>
+`);
 
     ventanaEmergente.focus();
 };
