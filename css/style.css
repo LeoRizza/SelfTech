@@ -603,7 +603,7 @@ body {
 
 .waveLeo1,
 .waveLeo2 {
-    width: 530px;
+    width: 550px;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -617,6 +617,7 @@ body {
     justify-content: center;
     color: white;
     gap: 40px;
+    padding: 0 5vw;
 }
 
 .casos_exito_movile {
@@ -807,6 +808,10 @@ body {
     align-items: flex-start;
 }
 
+#auditoria2 {
+    height: 10vh;
+}
+
 .formulario_box_titulo {
     font-size: 40px;
     margin-bottom: 30px;
@@ -867,6 +872,10 @@ body {
 
 .btn_leermas {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #dfdfdf;
+    margin-top: 5px;
 }
 
 .formulario_imagen_box_animar {
@@ -979,12 +988,20 @@ body {
 @media (max-width: 1600px) {
     .manosD {
         left: -4vw;
-        margin-top: 35vh;
+        margin-top: 26vh;
         width: 22rem;
+    }
+    
+    .waveLeo1 {
+        width: 400px;
+    }
+
+    .waveLeo2 {
+        width: 400px;
     }
 
     .manosI {
-        margin-top: 35vh;
+        margin-top: 26vh;
         right: -2vw;
         width: 22rem;
     }
@@ -1074,13 +1091,13 @@ body {
 
     .manosD {
         width: 22rem;
-        margin-top: 28vh;
+        margin-top: 18vh;
         left: -8vw;
     }
 
     .manosI {
         width: 22rem;
-        margin-top: 28vh;
+        margin-top: 18vh;
         right: -6vw;
     }
 
@@ -1178,6 +1195,7 @@ body {
     .formulario_imagen {
         width: 40vw;
     }
+
 }
 
 @media (max-width: 1000px) {
@@ -1188,13 +1206,18 @@ body {
     .main-img {
         margin-right: 2.5%;
     }
+
 }
 
 /* TABLET */
-@media (max-width: 834px) {
+@media (max-width: 830px) {
 
     .waveLeo {
         display: none;
+    }
+
+    .casos_exito_autor {
+        margin-bottom: 0px;
     }
 
     #auditoria {
@@ -1221,15 +1244,14 @@ body {
     .manosD {
         width: 17rem;
         height: 18rem;
-        margin-top: 30vh;
+        margin-top: 12rem;
         left: -8vw;
-
     }
 
     .manosI {
         width: 17rem;
         height: 18rem;
-        margin-top: 30vh;
+        margin-top: 12rem;
         right: -8vw;
     }
 
@@ -1574,7 +1596,7 @@ body {
 
     .calendly {
         margin-right: 0;
-        
+        margin-top: 0;
     }
 
     .formulario_imagen {
@@ -1584,20 +1606,24 @@ body {
     .manosD {
         width: 17rem;
         height: 18rem;
-        margin-top: 30vh;
-        left: -10vw;
-
+        margin-top: 12rem;
+        left: -15vw;
     }
 
     .manosI {
         width: 17rem;
         height: 18rem;
-        margin-top: 30vh;
-        right: -10vw;
+        margin-top: 12rem;
+        right: -6vw;
+    }
+
+    .boxServicios {
+        width: 14rem;
+        height: 14rem;
     }
 
     .serviciosText {
-        font-size: 18px;
+        font-size: 14px;
         margin: 5%;
     }
 
@@ -1658,7 +1684,7 @@ body {
     .conocenos_text_parrafo {
         font-size: 14px;
         text-align: center;
-        width: 80vw;
+        width: 70vw;
     }
 
     .formularios_box {
@@ -1699,6 +1725,10 @@ body {
         gap: 40px;
         background: linear-gradient(to left, #1F7667, #6CC6DA);
         position: relative;
+    }
+
+    .casos_exito_autor {
+        margin-bottom: 5px;
     }
 }
 
@@ -1792,7 +1822,7 @@ body {
     }
 
     .casos_exito_autor {
-        margin-bottom: 30px;
+        margin-bottom: 5px;
     }
 
     .casos_exito_button {

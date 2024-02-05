@@ -214,12 +214,14 @@ document.addEventListener("DOMContentLoaded", function () {
 //ondas servicios
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionar las ondas
     let waveLeo1 = document.querySelector('.waveLeo1');
     let waveLeo2 = document.querySelector('.waveLeo2');
 
-    const desplazamientoInicial = 100;
-    let tiempo1 = 0;
-    let tiempo2 = Math.PI;
+    // Configuración inicial
+    const desplazamientoInicial = 50;
+    const velocidadAnimacion = 0.005; // Puedes ajustar la velocidad de la animación modificando este valor
+    const rangoMovimiento = 20; // Puedes ajustar el rango de movimiento modificando este valor
     let ultimoScroll = 0;
 
     function animateWaves() {
@@ -228,16 +230,12 @@ document.addEventListener("DOMContentLoaded", function () {
         let direccionScroll = (scrollActual > ultimoScroll) ? 1 : -1;
 
         // Calcular el desplazamiento para waveLeo1 y ajustarlo al tiempo
-        let desplazamiento1 = desplazamientoInicial * Math.sin(tiempo1);
+        let desplazamiento1 = rangoMovimiento * Math.sin(velocidadAnimacion * scrollActual);
         waveLeo1.style.transform = `translateY(${desplazamiento1 * direccionScroll}px)`;
 
         // Calcular el desplazamiento para waveLeo2 y ajustarlo al tiempo
-        let desplazamiento2 = desplazamientoInicial * Math.sin(tiempo2);
+        let desplazamiento2 = rangoMovimiento * Math.sin(velocidadAnimacion * scrollActual + Math.PI); // Desplazamiento opuesto
         waveLeo2.style.transform = `translateY(${desplazamiento2 * direccionScroll}px)`;
-
-        // Incrementar los tiempos para la próxima posición en la animación
-        tiempo1 += 0.02; // Puedes ajustar la velocidad de la animación modificando este valor
-        tiempo2 += 0.02; // Puedes ajustar la velocidad de la animación modificando este valor
 
         // Actualizar el último scroll
         ultimoScroll = scrollActual;
@@ -250,184 +248,153 @@ document.addEventListener("DOMContentLoaded", function () {
     animateWaves();
 });
 
-
-
-//carrusel
-
+// Carrusel
 const dataCarrusel = [
     {
         img1: "./img/img_seccion3/logo_caso1.png",
         img2: "./img/img_seccion3/retrato_caso1.png",
-        contenido: 'Estoy muy agradecido con el trabajo de Selftech.  Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable. Estoy muy agradecido con el trabajo de Selftech.  Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable',
+        contenido: 'Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable. Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable',
         autor: "Giovanni Rimini de ",
         empresa: "Ricoseller"
     },
     {
         img1: "./img/img_seccion3/logo_caso2.png",
         img2: "./img/img_seccion3/retrato_caso2.png",
-        contenido: 'Con SelfTech AI he llegado al exito en mi  emprendimiento, ahora tengo más clientes satisfechos.',
+        contenido: 'Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos. Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos. Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos',
         autor: "Pablo Hernandez de ",
         empresa: "Mandala Garden"
     },
     {
         img1: "./img/img_seccion3/logo_caso3.png",
         img2: "./img/img_seccion3/retrato_caso3.png",
-        contenido: 'La nueva era de la tecnología llego y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es lider en sus servicios.',
+        contenido: 'La nueva era de la tecnología llegó y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios. La nueva era de la tecnología llegó y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios.',
         autor: "Andres Soto de ",
         empresa: "Freedelivery"
-    },
-]
-const img_caso_logo = document.querySelectorAll(".img_caso_logo")
-const img_caso_retrato = document.querySelectorAll(".img_caso_retrato")
-const text_contenido = document.querySelectorAll(".caso_text_contenido")
-const text_autor = document.querySelectorAll(".caso_text_autor")
-const text_empresa = document.querySelectorAll(".caso_text_empresa")
-const casos_contenido_movil = document.getElementById("casos_contenido_movil")
-const casos_exito_movile_id = document.getElementById("casos_exito_movile_id")
-const casos_contenido_movil_mas = document.getElementById("casos_contenido_movil_mas")
-const casos_exito_contenido_leer_id = document.getElementById("casos_exito_contenido_leer_id")
+    }
+];
 
+let posicion_carrusel = 0;
 
-const casos_exito_box_desktop = document.getElementById("casos_exito_box_desktop")
-const casos_contenido_desktop = document.getElementById("casos_contenido_desktop")
-const casos_exito_leer_mas = document.getElementById("casos_contenido_desktop_mas")
-const casos_exito_contenido_leer_desktop_id = document.getElementById("casos_exito_contenido_leer_desktop_id")
+const text_contenido_movil = document.querySelectorAll('.casos_exito_contenido_leer_mas-movil');
+const text_autor_movil = document.querySelectorAll('.caso_text_autor-movil');
+const text_empresa_movil = document.querySelectorAll('.casos_exito_autor-tipo-movil');
+const btnLeerMasMovil = document.getElementById("btn_leermas_movil");
+const img_caso_logo = document.querySelectorAll('.img_caso_logo');
+const img_caso_retrato = document.querySelectorAll('.img_caso_retrato');
+const text_contenido = document.querySelectorAll('.casos_exito_contenido_leer_mas');
+const text_autor = document.querySelectorAll('.caso_text_autor');
+const text_empresa = document.querySelectorAll('.casos_exito_autor-tipo');
+const btnLeerMas = document.getElementById("btn_leermas");
 
+function truncarTexto(texto, numeroPalabras) {
+    const palabras = texto.split(' ');
+    const textoTruncado = palabras.slice(0, numeroPalabras).join(' ');
+    return textoTruncado;
+}
 
+const mostrarLeerMas = (mostrar) => {
+    btnLeerMas.style.display = mostrar ? 'block' : 'none';
+};
 
-let posicion_carrusel = 0
+const abrirVentanaEmergente = (contenido) => {
+    const ventanaEmergente = window.open('', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=800px,height=500px');
 
+    ventanaEmergente.document.write(`
+        <!-- ... -->
+        <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil">${contenido}</p>
+        <!-- ... -->
+    `);
 
-const cargar_carrusel = (posicion) => {
+    ventanaEmergente.focus();
+};
+
+const cargarCarrusel = (posicion) => {
     img_caso_logo.forEach((elemento) => {
-        elemento.src = dataCarrusel[posicion].img1
-    })
+        elemento.src = dataCarrusel[posicion].img1;
+    });
     img_caso_retrato.forEach((elemento) => {
-        elemento.src = dataCarrusel[posicion].img2
-    })
+        elemento.src = dataCarrusel[posicion].img2;
+    });
+
+    // Obtener la versión truncada del contenido
+    const contenidoCompleto = dataCarrusel[posicion].contenido;
+    const contenidoTruncado = truncarTexto(contenidoCompleto, 10); // Cambiado a 10 palabras
+
+    // Actualizar el contenido en la sección desktop
+    document.getElementById("casos_exito_contenido_leer_mas").innerHTML = `"${contenidoTruncado}"`;
+
+    // Actualizar el contenido en la sección móvil
+    document.getElementById("casos_exito_contenido_leer_mas_movil").innerHTML = `"${contenidoTruncado}"`;
+
     text_contenido.forEach((elemento) => {
-        elemento.innerHTML = `"${dataCarrusel[posicion].contenido}"`
-        console.log(elemento.scrollHeight)
-        console.log(elemento.clientHeight)
-        if (elemento.scrollHeight > elemento.clientHeight) {
-            mostrarLeerMas(true)
-        }
+        elemento.innerHTML = `"${contenidoTruncado}"`;
+        mostrarLeerMas(elemento.scrollHeight > elemento.clientHeight);
+    });
 
-        casos_exito_contenido_leer_id.innerText = truncarTexto(elemento.innerText, 80)
-        casos_exito_contenido_leer_desktop_id.innerText = truncarTexto(elemento.innerText, 80)
+    text_contenido_movil.forEach((elemento) => {
+        elemento.innerHTML = `"${contenidoTruncado}"`;
+        mostrarLeerMas(elemento.scrollHeight > elemento.clientHeight);
+    });
 
-
-    })
     text_autor.forEach((elemento) => {
-        elemento.innerHTML = dataCarrusel[posicion].autor
-    })
+        elemento.innerHTML = dataCarrusel[posicion].autor;
+    });
+    text_autor_movil.forEach((elemento) => {
+        elemento.innerHTML = dataCarrusel[posicion].autor;
+    });
+
     text_empresa.forEach((elemento) => {
-        elemento.innerHTML = dataCarrusel[posicion].empresa
-    })
+        elemento.innerHTML = dataCarrusel[posicion].empresa;
+    });
 
+    text_empresa_movil.forEach((elemento) => {
+        elemento.innerHTML = dataCarrusel[posicion].empresa;
+    });
 
-}
+    // También actualiza el evento click del botón "Leer Más" en ambas secciones
+    btnLeerMas.removeEventListener("click", () => {
+        abrirVentanaEmergente(contenidoCompleto);
+    });
 
-function resetear_estilos_carrusel() {
-    casos_contenido_movil.style.overflow = "hidden"
-    casos_exito_movile_id.style.height = "";
-    casos_exito_box_desktop.style.height = "";
-    casos_contenido_desktop.style.overflow = "hidden"
-    mostrarLeerMas(false)
-}
+    btnLeerMas.addEventListener("click", () => {
+        abrirVentanaEmergente(contenidoCompleto);
+    });
 
-function retroceder_carrusel() {
-    console.log("retroceder")
-    resetear_estilos_carrusel()
-    posicion_carrusel--
-    if (posicion_carrusel < 0) posicion_carrusel = dataCarrusel.length - 1
-    cargar_carrusel(posicion_carrusel)
-}
+    btnLeerMasMovil.removeEventListener("click", () => {
+        abrirVentanaEmergente(contenidoCompleto);
+    });
 
-function avanzar_carrusel() {
-    console.log("avanzar")
-    resetear_estilos_carrusel()
-    posicion_carrusel++
-    if (posicion_carrusel >= dataCarrusel.length) posicion_carrusel = 0
-    cargar_carrusel(posicion_carrusel)
-}
+    btnLeerMasMovil.addEventListener("click", () => {
+        abrirVentanaEmergente(contenidoCompleto);
+    });
+};
 
-function truncarTexto(texto, limite) {
-    if (texto.length > limite) {
-        var indiceEspacio = texto.indexOf(' ', limite);
+const avanzar_carrusel = () => {
+    posicion_carrusel = (posicion_carrusel + 1) % dataCarrusel.length;
+    cargarCarrusel(posicion_carrusel);
+};
 
-        if (indiceEspacio !== -1) {
-            texto = texto.substring(0, indiceEspacio) + '...';
-        } else {
-            texto = texto.substring(0, limite) + '...';
-        }
-    }
-    return texto;
-}
+const retroceder_carrusel = () => {
+    posicion_carrusel = (posicion_carrusel - 1 + dataCarrusel.length) % dataCarrusel.length;
+    cargarCarrusel(posicion_carrusel);
+};
 
-
-function iniciar() {
-    mostrarLeerMas(false)
-    cargar_carrusel(posicion_carrusel)
-
-}
-
-function mostrarLeerMas(mostrar) {
-    console.log(mostrar)
-
-    casos_contenido_movil.style.display = mostrar ? "none" : "block"
-    casos_contenido_movil_mas.style.display = mostrar ? "flex" : "none"
-    casos_exito_leer_mas.style.display = mostrar ? "flex" : "none"
-    casos_contenido_desktop.style.display = mostrar ? "none" : "block"
-}
-
-function leer_mas() {
-
-
-
-    mostrarLeerMas(false)
-    const incremento_caja = casos_contenido_movil.scrollHeight - casos_contenido_movil.clientHeight
-
-    actualizarAlturaCasosExito(incremento_caja, casos_exito_movile_id)
-    const incremento_cajadesktop = casos_contenido_desktop.scrollHeight - casos_contenido_desktop.clientHeight
-
-    actualizarAlturaCasosExito(incremento_cajadesktop, casos_exito_box_desktop)
-
-
-    casos_contenido_movil.style.overflow = "visible"
-    casos_contenido_desktop.style.overflow = "visible"
-
-}
-
-function actualizarAlturaCasosExito(incremento_caja, caja_exito) {
-
-    const casos_exito_movile_styles = window.getComputedStyle(caja_exito);
-    const alturaActual = casos_exito_movile_styles.getPropertyValue("height");
-
-    const alturaActualNum = parseFloat(alturaActual.replace("px", ""));
-
-    const nuevaAltura = alturaActualNum + incremento_caja;
-
-    caja_exito.style.height = nuevaAltura + "px";
-}
-iniciar()
-window.addEventListener('resize', function () {
-    resetear_estilos_carrusel()
-    cargar_carrusel(posicion_carrusel)
+// Agregar el event listener del botón Leer Más una sola vez
+btnLeerMas.removeEventListener("click", () => {
+    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
 });
-const formulario_mano_animar = document.getElementById("formulario_mano_animar")
-let ultimaDireccionScroll = '';
-let ultimoScroll = 0
-window.addEventListener("scroll", function () {
-    const desplazamientoVertical = 100;
-    if (ultimaDireccionScroll !== 'arriba') {
-        // Aplica desplazamiento vertical si hay movimiento hacia arriba
-        formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
-        ultimaDireccionScroll = 'arriba';
-    } else {
-        // Detiene el desplazamiento si no hay movimiento hacia arriba
-        formulario_mano_animar.style.transform = 'translateY(0)';
-        ultimaDireccionScroll = 'abajo';
-    }
 
-})
+btnLeerMas.addEventListener("click", () => {
+    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
+});
+
+// Evento click del botón "Leer Más" en la sección móvil
+btnLeerMasMovil.removeEventListener("click", () => {
+    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
+});
+
+btnLeerMasMovil.addEventListener("click", () => {
+    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
+});
+
+cargarCarrusel(posicion_carrusel);
