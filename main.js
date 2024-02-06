@@ -214,37 +214,51 @@ document.addEventListener("DOMContentLoaded", function () {
 //ondas servicios
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Seleccionar las ondas
     let waveLeo1 = document.querySelector('.waveLeo1');
     let waveLeo2 = document.querySelector('.waveLeo2');
 
-    // Configuración inicial
-    const velocidadAnimacion = 0.005; // Puedes ajustar la velocidad de la animación modificando este valor
-    const rangoMovimiento = 20; // Puedes ajustar el rango de movimiento modificando este valor
+    const velocidadAnimacion = 0.001;
+    const rangoMovimiento = 40;
 
     function animateWaves() {
-        // Obtener la posición actual de desplazamiento
         let scrollActual = window.scrollY;
 
-        // Calcular el desplazamiento para waveLeo1 y ajustarlo al tiempo
         let desplazamiento1 = rangoMovimiento * Math.sin(velocidadAnimacion * scrollActual);
         waveLeo1.style.transform = `translateY(${desplazamiento1}px)`;
+        waveLeo1.style.opacity = 1 - Math.abs(desplazamiento1 / rangoMovimiento);
 
-        // Calcular el desplazamiento para waveLeo2 y ajustarlo al tiempo
-        let desplazamiento2 = rangoMovimiento * Math.sin(velocidadAnimacion * scrollActual + Math.PI); // Desplazamiento opuesto
+        let desplazamiento2 = rangoMovimiento * Math.sin(velocidadAnimacion * scrollActual + Math.PI);
         waveLeo2.style.transform = `translateY(${desplazamiento2}px)`;
-
-        // Solicitar el próximo cuadro de animación
-        requestAnimationFrame(animateWaves);
+        waveLeo2.style.opacity = 1 - Math.abs(desplazamiento2 / rangoMovimiento);
     }
 
-    // Iniciar la animación
+    function handleScroll() {
+        animateWaves();
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
     animateWaves();
 });
 
+/* mano formulario/calendly */
 
+const formulario_mano_animar = document.getElementById("formulario_mano_animar");
+let ultimaDireccionScroll = '';
+let ultimoScroll = 0;
 
-/* // Carrusel
+window.addEventListener("scroll", function () {
+    const desplazamientoVertical = 100;
+
+    if (ultimaDireccionScroll !== 'arriba') {
+        formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
+        ultimaDireccionScroll = 'arriba';
+    } else {
+        formulario_mano_animar.style.transform = 'translateY(0)';
+        ultimaDireccionScroll = 'abajo';
+    }
+});
+
 const dataCarrusel = [
     {
         img1: "./img/img_seccion3/logo_caso1.png",
@@ -256,330 +270,150 @@ const dataCarrusel = [
     {
         img1: "./img/img_seccion3/logo_caso2.png",
         img2: "./img/img_seccion3/retrato_caso2.png",
-        contenido: 'Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos. Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos. Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos',
+        contenido: 'Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos.',
         autor: "Pablo Hernandez de ",
         empresa: "Mandala Garden"
     },
     {
         img1: "./img/img_seccion3/logo_caso3.png",
         img2: "./img/img_seccion3/retrato_caso3.png",
-        contenido: 'La nueva era de la tecnología llegó y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios. La nueva era de la tecnología llegó y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios.',
+        contenido: 'La nueva era de la tecnología llego y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios.',
         autor: "Andres Soto de ",
         empresa: "Freedelivery"
-    }
+    },
 ];
+
+const img_caso_logo = document.querySelectorAll(".img_caso_logo");
+const img_caso_retrato = document.querySelectorAll(".img_caso_retrato");
+const text_contenido = document.querySelectorAll(".caso_text_contenido");
+const text_autor = document.querySelectorAll(".caso_text_autor");
+const text_empresa = document.querySelectorAll(".caso_text_empresa");
+const casos_contenido_movil = document.getElementById("casos_contenido_movil");
+const casos_exito_movile_id = document.getElementById("casos_exito_movile_id");
+const casos_contenido_movil_mas = document.getElementById("casos_contenido_movil_mas");
+const casos_exito_contenido_leer_id = document.getElementById("casos_exito_contenido_leer_id");
+
+const casos_exito_box_desktop = document.getElementById("casos_exito_box_desktop");
+const casos_contenido_desktop = document.getElementById("casos_contenido_desktop");
+const casos_exito_leer_mas = document.getElementById("casos_contenido_desktop_mas");
+const casos_exito_contenido_leer_desktop_id = document.getElementById("casos_exito_contenido_leer_desktop_id");
 
 let posicion_carrusel = 0;
 
-const text_contenido_movil = document.querySelectorAll('.casos_exito_contenido_leer_mas-movil');
-const text_autor_movil = document.querySelectorAll('.caso_text_autor-movil');
-const text_empresa_movil = document.querySelectorAll('.casos_exito_autor-tipo-movil');
-const btnLeerMasMovil = document.getElementById("btn_leermas_movil");
-const img_caso_logo = document.querySelectorAll('.img_caso_logo');
-const img_caso_retrato = document.querySelectorAll('.img_caso_retrato');
-const text_contenido = document.querySelectorAll('.casos_exito_contenido_leer_mas');
-const text_autor = document.querySelectorAll('.caso_text_autor');
-const text_empresa = document.querySelectorAll('.casos_exito_autor-tipo');
-const btnLeerMas = document.getElementById("btn_leermas");
-
-function truncarTexto(texto, numeroPalabras) {
-    const palabras = texto.split(' ');
-    const textoTruncado = palabras.slice(0, numeroPalabras).join(' ');
-    return textoTruncado;
-}
-
-const mostrarLeerMas = (mostrar) => {
-    btnLeerMas.style.display = mostrar ? 'block' : 'none';
+const cerrarModal = () => {
+    const modal = document.getElementById("casos_exito_modal");
+    modal.style.display = "none";
 };
 
-const abrirVentanaEmergente = (contenido) => {
-    const ventanaEmergente = window.open('', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=850px,height=600px');
-
-    ventanaEmergente.document.write(`
-    <html lang="es">
-    <head>
-        <title>Leer Más</title>
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
-    </head>
-    <body>
-        <section class="casos_exito_ventana">
-            <article class="casos_exito_box">
-                <h2 class="casos_exito_titulo">Casos de éxito</h2>
-                <div class="casos_exito_box_images">
-                    <img src="${dataCarrusel[posicion_carrusel].img1}" alt="" class="img_caso_logo img_caso">
-                    <img class="rounded img_caso_retrato img_caso" src="${dataCarrusel[posicion_carrusel].img2}" alt="">
-                </div>
-                <div class="casos_exito_box_contenido">
-                    <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil">${contenido}</p>
-                </div>
-                <div class="casos_exito_bottom">
-                    <p class="casos_exito_autor"><span class="caso_text_autor">${dataCarrusel[posicion_carrusel].autor}</span><span
-                            class="casos_exito_autor-tipo caso_text_empresa">${dataCarrusel[posicion_carrusel].empresa}</span></p>
-                </div>
-                <button class="casos_exito_button_ventana">Lleguemos al éxito juntos</button>
-            </article>
-        </section>
-        <button onclick="window.close()">Cerrar</button>
-    </body>
-    </html>
-`);
-
-    ventanaEmergente.focus();
-};
-
-const cargarCarrusel = (posicion) => {
+const cargar_carrusel = (posicion) => {
     img_caso_logo.forEach((elemento) => {
         elemento.src = dataCarrusel[posicion].img1;
     });
+
     img_caso_retrato.forEach((elemento) => {
         elemento.src = dataCarrusel[posicion].img2;
     });
 
-    // Obtener la versión truncada del contenido
-    const contenidoCompleto = dataCarrusel[posicion].contenido;
-    const contenidoTruncado = truncarTexto(contenidoCompleto, 10); // Cambiado a 10 palabras
-
-    // Actualizar el contenido en la sección desktop
-    document.getElementById("casos_exito_contenido_leer_mas").innerHTML = `"${contenidoTruncado}"`;
-
-    // Actualizar el contenido en la sección móvil
-    document.getElementById("casos_exito_contenido_leer_mas_movil").innerHTML = `"${contenidoTruncado}"`;
-
+    const contenido = dataCarrusel[posicion].contenido;
     text_contenido.forEach((elemento) => {
-        elemento.innerHTML = `"${contenidoTruncado}"`;
-        mostrarLeerMas(elemento.scrollHeight > elemento.clientHeight);
-    });
+        const textoTruncado = truncarTexto(contenido, 20);
+        mostrarLeerMas(contenido.length > 20);
 
-    text_contenido_movil.forEach((elemento) => {
-        elemento.innerHTML = `"${contenidoTruncado}"`;
-        mostrarLeerMas(elemento.scrollHeight > elemento.clientHeight);
+        if (contenido.length > 20) {
+            elemento.innerHTML = `<span class="truncado">${textoTruncado}</span><span class="completo">${contenido}</span>`;
+        } else {
+            elemento.innerHTML = `<span class="truncado">${contenido}</span>`;
+        }
     });
 
     text_autor.forEach((elemento) => {
-        elemento.innerHTML = dataCarrusel[posicion].autor;
-    });
-    text_autor_movil.forEach((elemento) => {
         elemento.innerHTML = dataCarrusel[posicion].autor;
     });
 
     text_empresa.forEach((elemento) => {
         elemento.innerHTML = dataCarrusel[posicion].empresa;
     });
-
-    text_empresa_movil.forEach((elemento) => {
-        elemento.innerHTML = dataCarrusel[posicion].empresa;
-    });
-
-    // También actualiza el evento click del botón "Leer Más" en ambas secciones
-    btnLeerMas.removeEventListener("click", () => {
-        abrirVentanaEmergente(contenidoCompleto);
-    });
-
-    btnLeerMas.addEventListener("click", () => {
-        abrirVentanaEmergente(contenidoCompleto);
-    });
-
-    btnLeerMasMovil.removeEventListener("click", () => {
-        abrirVentanaEmergente(contenidoCompleto);
-    });
-
-    btnLeerMasMovil.addEventListener("click", () => {
-        abrirVentanaEmergente(contenidoCompleto);
-    });
 };
 
-const avanzar_carrusel = () => {
-    posicion_carrusel = (posicion_carrusel + 1) % dataCarrusel.length;
-    cargarCarrusel(posicion_carrusel);
-};
 
-const retroceder_carrusel = () => {
-    posicion_carrusel = (posicion_carrusel - 1 + dataCarrusel.length) % dataCarrusel.length;
-    cargarCarrusel(posicion_carrusel);
-};
+function resetear_estilos_carrusel() {
+    casos_contenido_movil.style.overflow = "hidden";
+    casos_exito_movile_id.style.height = "";
+    casos_exito_box_desktop.style.height = "";
+    casos_contenido_desktop.style.overflow = "hidden";
+    mostrarLeerMas(false);
+}
 
-// Agregar el event listener del botón Leer Más una sola vez
-btnLeerMas.removeEventListener("click", () => {
-    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
-});
+function retroceder_carrusel() {
+    resetear_estilos_carrusel();
+    posicion_carrusel--;
 
-btnLeerMas.addEventListener("click", () => {
-    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
-});
-
-// Evento click del botón "Leer Más" en la sección móvil
-btnLeerMasMovil.removeEventListener("click", () => {
-    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
-});
-
-btnLeerMasMovil.addEventListener("click", () => {
-    abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
-});
-
-cargarCarrusel(posicion_carrusel); */
-
-document.addEventListener("DOMContentLoaded", function () {
-    const dataCarrusel = [
-        {
-            img1: "./img/img_seccion3/logo_caso1.png",
-            img2: "./img/img_seccion3/retrato_caso1.png",
-            contenido: 'Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable. Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable',
-            autor: "Giovanni Rimini de ",
-            empresa: "Ricoseller"
-        },
-        {
-            img1: "./img/img_seccion3/logo_caso2.png",
-            img2: "./img/img_seccion3/retrato_caso2.png",
-            contenido: 'Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos. Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos. Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos',
-            autor: "Pablo Hernandez de ",
-            empresa: "Mandala Garden"
-        },
-        {
-            img1: "./img/img_seccion3/logo_caso3.png",
-            img2: "./img/img_seccion3/retrato_caso3.png",
-            contenido: 'La nueva era de la tecnología llegó y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios. La nueva era de la tecnología llegó y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios.',
-            autor: "Andres Soto de ",
-            empresa: "Freedelivery"
-        }
-    ];
-
-    let posicion_carrusel = 0;
-
-    const text_contenido_movil = document.querySelectorAll('.casos_exito_contenido_leer_mas-movil');
-    const text_autor_movil = document.querySelectorAll('.caso_text_autor-movil');
-    const text_empresa_movil = document.querySelectorAll('.casos_exito_autor-tipo-movil');
-    const btnLeerMasMovil = document.getElementById("btn_leermas_movil");
-    const img_caso_logo = document.querySelectorAll('.img_caso_logo');
-    const img_caso_retrato = document.querySelectorAll('.img_caso_retrato');
-    const text_contenido = document.querySelectorAll('.casos_exito_contenido_leer_mas');
-    const text_autor = document.querySelectorAll('.caso_text_autor');
-    const text_empresa = document.querySelectorAll('.casos_exito_autor-tipo');
-    const btnLeerMas = document.getElementById("btn_leermas");
-
-    function truncarTexto(texto, numeroPalabras) {
-        const palabras = texto.split(' ');
-        const textoTruncado = palabras.slice(0, numeroPalabras).join(' ');
-        return textoTruncado;
+    if (posicion_carrusel < 0) {
+        posicion_carrusel = dataCarrusel.length - 1;
     }
 
-    const mostrarLeerMas = (mostrar) => {
-        btnLeerMas.style.display = mostrar ? 'block' : 'none';
-    };
+    cargar_carrusel(posicion_carrusel);
+}
 
-    const abrirModal = (contenido) => {
-        const modal = document.getElementById("casos_exito_modal");
-        const modalContenido = document.getElementById("casos_exito_modal_contenido");
+function avanzar_carrusel() {
+    resetear_estilos_carrusel();
+    posicion_carrusel++;
 
-        modalContenido.innerHTML = `
-            <section class="casos_exito_ventana">
-                <article class="casos_exito_box">
-                    <h2 class="casos_exito_titulo">Casos de éxito</h2>
-                    <div class="casos_exito_box_images">
-                        <img src="${dataCarrusel[posicion_carrusel].img1}" alt="" class="img_caso_logo img_caso">
-                        <img class="rounded img_caso_retrato img_caso" src="${dataCarrusel[posicion_carrusel].img2}" alt="">
-                    </div>
-                    <div class="casos_exito_box_contenido">
-                        <p class="casos_exito_contenido caso_text_contenido" id="casos_contenido_movil">${contenido}</p>
-                    </div>
-                    <div class="casos_exito_bottom">
-                        <p class="casos_exito_autor"><span class="caso_text_autor">${dataCarrusel[posicion_carrusel].autor}</span><span
-                                class="casos_exito_autor-tipo caso_text_empresa">${dataCarrusel[posicion_carrusel].empresa}</span></p>
-                    </div>
-                    <button class="casos_exito_button_ventana">Lleguemos al éxito juntos</button>
-                </article>
-            </section>
-            <button class="btn_leermas" onclick="cerrarModal()">Cerrar</button>
-        `;
+    if (posicion_carrusel >= dataCarrusel.length) {
+        posicion_carrusel = 0;
+    }
 
-        modal.style.display = "block";
-    };
+    cargar_carrusel(posicion_carrusel);
+}
 
-    const cerrarModal = () => {
-        const modal = document.getElementById("casos_exito_modal");
-        modal.style.display = "none";
-    };
+function truncarTexto(texto, limite) {
+    return texto.slice(0, limite) + (texto.length > limite ? '...' : '');
+}
 
-    const cargarCarrusel = (posicion) => {
-        img_caso_logo.forEach((elemento) => {
-            elemento.src = dataCarrusel[posicion].img1;
-        });
-        img_caso_retrato.forEach((elemento) => {
-            elemento.src = dataCarrusel[posicion].img2;
-        });
+function iniciar() {
+    mostrarLeerMas(false);
+    cargar_carrusel(posicion_carrusel);
+}
 
-        const contenidoCompleto = dataCarrusel[posicion].contenido;
-        const contenidoTruncado = truncarTexto(contenidoCompleto, 10);
+function mostrarLeerMas(mostrar) {
+    casos_contenido_movil.style.display = mostrar ? "none" : "block";
+    casos_contenido_movil_mas.style.display = mostrar ? "flex" : "none";
+    casos_exito_leer_mas.style.display = mostrar ? "flex" : "none";
+    casos_contenido_desktop.style.display = mostrar ? "none" : "none";
+    casos_exito_contenido_leer_desktop_id.style.display = mostrar ? "block" : "none";
+}
 
-        document.getElementById("casos_exito_contenido_leer_mas").innerHTML = `"${contenidoTruncado}"`;
-        document.getElementById("casos_exito_contenido_leer_mas_movil").innerHTML = `"${contenidoTruncado}"`;
+function leer_mas() {
+    const contenidoCompleto = dataCarrusel[posicion_carrusel].contenido;
 
-        text_contenido.forEach((elemento) => {
-            elemento.innerHTML = `"${contenidoTruncado}"`;
-            mostrarLeerMas(elemento.scrollHeight > elemento.clientHeight);
-        });
+    // Asignar contenido completo al modal
+    const modalContenido = document.getElementById("casos_contenido_movil");
+    modalContenido.innerHTML = contenidoCompleto;
 
-        text_contenido_movil.forEach((elemento) => {
-            elemento.innerHTML = `"${contenidoTruncado}"`;
-            mostrarLeerMas(elemento.scrollHeight > elemento.clientHeight);
-        });
+    // Mostrar el modal
+    const modal = document.getElementById("casos_exito_modal");
+    modal.style.display = "block";
 
-        text_autor.forEach((elemento) => {
-            elemento.innerHTML = dataCarrusel[posicion].autor;
-        });
-        text_autor_movil.forEach((elemento) => {
-            elemento.innerHTML = dataCarrusel[posicion].autor;
-        });
+    // Ocultar el contenido actual
+    mostrarLeerMas(false);
 
-        text_empresa.forEach((elemento) => {
-            elemento.innerHTML = dataCarrusel[posicion].empresa;
-        });
+    // Actualizar altura del modal si es necesario
+    const incremento_caja = casos_contenido_movil_mas.scrollHeight - casos_contenido_movil.clientHeight;
+    actualizarAlturaCasosExito(incremento_caja, casos_exito_movile_id);
 
-        text_empresa_movil.forEach((elemento) => {
-            elemento.innerHTML = dataCarrusel[posicion].empresa;
-        });
+    // Permitir desplazamiento en el modal
+    casos_contenido_movil.style.overflow = "visible";
+    casos_contenido_desktop.style.overflow = "visible";
+}
 
-        btnLeerMas.removeEventListener("click", () => {
-            abrirVentanaEmergente(contenidoCompleto);
-        });
+function actualizarAlturaCasosExito(incremento_caja, caja_exito) {
+    const nuevaAltura = caja_exito.clientHeight + incremento_caja;
+    caja_exito.style.height = nuevaAltura + "px";
+}
 
-        btnLeerMas.addEventListener("click", () => {
-            abrirModal(contenidoCompleto);
-        });
+iniciar();
 
-        btnLeerMasMovil.removeEventListener("click", () => {
-            abrirVentanaEmergente(contenidoCompleto);
-        });
-
-        btnLeerMasMovil.addEventListener("click", () => {
-            abrirModal(contenidoCompleto);
-        });
-    };
-
-    const avanzar_carrusel = () => {
-        posicion_carrusel = (posicion_carrusel + 1) % dataCarrusel.length;
-        cargarCarrusel(posicion_carrusel);
-    };
-
-    const retroceder_carrusel = () => {
-        posicion_carrusel = (posicion_carrusel - 1 + dataCarrusel.length) % dataCarrusel.length;
-        cargarCarrusel(posicion_carrusel);
-    };
-
-    btnLeerMas.removeEventListener("click", () => {
-        abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
-    });
-
-    btnLeerMas.addEventListener("click", () => {
-        abrirModal(dataCarrusel[posicion_carrusel].contenido);
-    });
-
-    btnLeerMasMovil.removeEventListener("click", () => {
-        abrirVentanaEmergente(dataCarrusel[posicion_carrusel].contenido);
-    });
-
-    btnLeerMasMovil.addEventListener("click", () => {
-        abrirModal(dataCarrusel[posicion_carrusel].contenido);
-    });
-
-    cargarCarrusel(posicion_carrusel);
+window.addEventListener('resize', function () {
+    resetear_estilos_carrusel();
+    cargar_carrusel(posicion_carrusel);
 });

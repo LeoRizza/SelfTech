@@ -600,20 +600,60 @@ body {
 .waveLeo1,
 .waveLeo2 {
     position: absolute;
-    top: -15vw;
+    top: -13vw;
     width: 600px;
     transition: transform 0.5s ease-in-out;
 }
 
 /*------------------------------------------YESICA------------------------------------------*/
 
+.modal {
+    width: 500px;
+    height: fit-content;
+    position: relative;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeModal {
+    font-size: 30px;
+    font-weight: 800;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    margin-left: 90%;
+}
+
+.casos_exito_bottom_ventana {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .casos_exito_ventana {
     background: linear-gradient(to left, #1F7667, #6CC6DA);
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal {
+    border-radius: 20px;
+}
+
+.casos_exito_ventana article{
+    text-align: center;
+}
+.casos_exito_box_contenido_ventana {
+    padding-top: 50px;
 }
 
 .casos_exito_button_ventana {
     background: linear-gradient(120deg, var(--c1, #000), var(--c2, #1a1a1a) 51%, var(--c1, #000)) var(--x, 0)/ 200%;
-    background-size: 300% 100%;
     color: white;
     padding: 1rem;
     font-weight: 700;
@@ -622,7 +662,6 @@ body {
     cursor: pointer;
     border: none;
     transition: .5s;
-    margin: 50px 0;
 }
 
 .casos_exito_button_ventana:hover {
@@ -657,7 +696,7 @@ body {
     justify-content: center;
     color: white;
     gap: 40px;
-    padding: 0 5vw;
+    padding: 0 15vw;
 }
 
 .casos_exito_movile {
