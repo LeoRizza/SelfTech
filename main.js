@@ -259,6 +259,8 @@ window.addEventListener("scroll", function () {
     }
 });
 
+/* Carrusel */
+
 const dataCarrusel = [
     {
         img1: "./img/img_seccion3/logo_caso1.png",
@@ -384,6 +386,7 @@ function mostrarLeerMas(mostrar) {
 }
 
 function leer_mas() {
+    // Obtener el contenido completo del carrusel actual
     const contenidoCompleto = dataCarrusel[posicion_carrusel].contenido;
 
     // Asignar contenido completo al modal
@@ -394,8 +397,8 @@ function leer_mas() {
     const modal = document.getElementById("casos_exito_modal");
     modal.style.display = "block";
 
-    // Ocultar el contenido actual
-    mostrarLeerMas(false);
+    // No ocultar el contenido actual en la página principal
+    // No es necesario llamar mostrarLeerMas(false);
 
     // Actualizar altura del modal si es necesario
     const incremento_caja = casos_contenido_movil_mas.scrollHeight - casos_contenido_movil.clientHeight;
