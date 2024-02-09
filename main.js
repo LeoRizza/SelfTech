@@ -259,6 +259,18 @@ window.addEventListener("scroll", function () {
     }
 });
 
+
+/* burger close */
+let navButtons = document.querySelectorAll(".nav-button, .nav-button2");
+
+navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        burguer.classList.remove("active");
+        nav.classList.remove("visible");
+        header.classList.remove("mobile");
+    });
+});
+
 /* Carrusel */
 
 const dataCarrusel = [
@@ -327,6 +339,7 @@ const cargar_carrusel = (posicion) => {
     text_contenido_leer_movil.innerHTML = textoTruncado;
     text_contenido_desktop.innerHTML = textoTruncado;
     text_contenido_movil.innerHTML = textoTruncado;
+    casos_contenido_movil.innerHTML = contenido;
 
     mostrarLeerMas(contenido.length > 80);
 
@@ -396,20 +409,27 @@ function mostrarLeerMas(mostrar) {
 function leer_mas() {
     const contenidoCompleto = dataCarrusel[posicion_carrusel].contenido;
 
-    // Asignar contenido completo al modal
     const modalContenido = document.getElementById("casos_contenido_movil");
     modalContenido.innerHTML = contenidoCompleto;
 
-    // Asignar texto truncado a la página principal
-    const textoTruncado = truncarTexto(contenidoCompleto, 80);
     text_contenido[0].innerHTML = `<span class="truncado">${text_contenido}</span>`;
 
-    // Mostrar el modal
     const modal = document.getElementById("casos_exito_modal");
     modal.style.display = "block";
 
-    // Ocultar el contenido actual
-    mostrarLeerMas(false);
+    const contenido = dataCarrusel[posicion].contenido;
+    text_contenido.forEach((elemento) => {
+        const textoTruncado = truncarTexto(contenido, 20);
+        mostrarLeerMas(contenido.length > 20);
+        if (contenido.length > 20) {
+            elemento.innerHTML = `<span class="truncado">${textoTruncado}</span><span class="completo">${contenido}</span>`;
+        } else {
+            elemento.innerHTML = `<span class="truncado">${contenido}</span>`;
+        }
+    });
+
+
+    mostrarLeerMas(true);
 
     // Permitir desplazamiento en el modal
     casos_contenido_movil.style.overflow = "visible";
@@ -418,7 +438,7 @@ function leer_mas() {
 
 iniciar();
 
-window.addEventListener('resize', function () {
+/* window.addEventListener('resize', function () {
     resetear_estilos_carrusel();
     cargar_carrusel(posicion_carrusel);
-});
+}); */
