@@ -608,12 +608,12 @@ body {
 /*------------------------------------------YESICA------------------------------------------*/
 
 .modal {
-    width: 600px;
+    width: 30%;
     height: fit-content;
     position: relative;
     z-index: 20;
     border-radius: 20px;
-    top: -500px;
+    top: -50vh;
     margin-left: 50vw;
     position: absolute;
 }
@@ -631,6 +631,7 @@ body {
     margin: 0;
     padding: 0;
     margin-left: 90%;
+    cursor: pointer;
 }
 
 .casos_exito_bottom_ventana {
@@ -642,6 +643,7 @@ body {
     background: linear-gradient(to left, #1F7667, #6CC6DA);
     padding: 20px 20px;
     display: flex;
+    width: 100vw;
     flex-direction: column;
     justify-content: center;
 }

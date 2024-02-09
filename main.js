@@ -294,7 +294,10 @@ const casos_contenido_movil = document.getElementById("casos_contenido_movil");
 const casos_exito_movile_id = document.getElementById("casos_exito_movile_id");
 const casos_contenido_movil_mas = document.getElementById("casos_contenido_movil_mas");
 const casos_exito_contenido_leer_id = document.getElementById("casos_exito_contenido_leer_id");
-
+const text_contenido_leer_desktop = document.getElementById("casos_exito_contenido_leer_desktop_id");
+const text_contenido_leer_movil = document.getElementById("casos_exito_contenido_leer_id");
+const text_contenido_desktop = document.getElementById("casos_contenido_desktop");
+const text_contenido_movil = document.getElementById("casos_contenido_movil");
 const casos_exito_box_desktop = document.getElementById("casos_exito_box_desktop");
 const casos_contenido_desktop = document.getElementById("casos_contenido_desktop");
 const casos_exito_leer_mas = document.getElementById("casos_contenido_desktop_mas");
@@ -317,16 +320,21 @@ const cargar_carrusel = (posicion) => {
     });
 
     const contenido = dataCarrusel[posicion].contenido;
-    text_contenido.forEach((elemento) => {
-        const textoTruncado = truncarTexto(contenido, 20);
-        mostrarLeerMas(contenido.length > 20);
+    const textoTruncado = truncarTexto(contenido, 80);
 
-        if (contenido.length > 20) {
-            elemento.innerHTML = `<span class="truncado">${textoTruncado}</span><span class="completo">${contenido}</span>`;
-        } else {
-            elemento.innerHTML = `<span class="truncado">${contenido}</span>`;
-        }
-    });
+    // Asignar texto truncado a los elementos correspondientes
+    text_contenido_leer_desktop.innerHTML = textoTruncado;
+    text_contenido_leer_movil.innerHTML = textoTruncado;
+    text_contenido_desktop.innerHTML = textoTruncado;
+    text_contenido_movil.innerHTML = textoTruncado;
+
+    mostrarLeerMas(contenido.length > 80);
+
+    if (contenido.length > 80) {
+        text_contenido[0].innerHTML = `<span class="truncado">${textoTruncado}</span>`;
+    } else {
+        text_contenido[0].innerHTML = `<span class="truncado">${contenido}</span>`;
+    }
 
     text_autor.forEach((elemento) => {
         elemento.innerHTML = dataCarrusel[posicion].autor;
@@ -381,37 +389,31 @@ function mostrarLeerMas(mostrar) {
     casos_contenido_movil.style.display = mostrar ? "none" : "block";
     casos_contenido_movil_mas.style.display = mostrar ? "flex" : "none";
     casos_exito_leer_mas.style.display = mostrar ? "flex" : "none";
-    casos_contenido_desktop.style.display = mostrar ? "none" : "none";
+    casos_contenido_desktop.style.display = mostrar ? "none" : "block";
     casos_exito_contenido_leer_desktop_id.style.display = mostrar ? "block" : "none";
 }
 
 function leer_mas() {
-    // Obtener el contenido completo del carrusel actual
     const contenidoCompleto = dataCarrusel[posicion_carrusel].contenido;
 
     // Asignar contenido completo al modal
     const modalContenido = document.getElementById("casos_contenido_movil");
     modalContenido.innerHTML = contenidoCompleto;
 
+    // Asignar texto truncado a la página principal
+    const textoTruncado = truncarTexto(contenidoCompleto, 80);
+    text_contenido[0].innerHTML = `<span class="truncado">${text_contenido}</span>`;
+
     // Mostrar el modal
     const modal = document.getElementById("casos_exito_modal");
     modal.style.display = "block";
 
-    // No ocultar el contenido actual en la página principal
-    // No es necesario llamar mostrarLeerMas(false);
-
-    // Actualizar altura del modal si es necesario
-    const incremento_caja = casos_contenido_movil_mas.scrollHeight - casos_contenido_movil.clientHeight;
-    actualizarAlturaCasosExito(incremento_caja, casos_exito_movile_id);
+    // Ocultar el contenido actual
+    mostrarLeerMas(false);
 
     // Permitir desplazamiento en el modal
     casos_contenido_movil.style.overflow = "visible";
     casos_contenido_desktop.style.overflow = "visible";
-}
-
-function actualizarAlturaCasosExito(incremento_caja, caja_exito) {
-    const nuevaAltura = caja_exito.clientHeight + incremento_caja;
-    caja_exito.style.height = nuevaAltura + "px";
 }
 
 iniciar();
