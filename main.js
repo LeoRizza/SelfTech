@@ -38,6 +38,18 @@ burguer.addEventListener("click", () => {
     header.classList.toggle("mobile");
 });
 
+/* burger close */
+let navButtons = document.querySelectorAll(".nav-button, .nav-button2");
+
+navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        burguer.classList.remove("active");
+        nav.classList.remove("visible");
+        header.classList.remove("mobile");
+    });
+});
+
+
 // BLUR DEL NAVBAR AL SCROLLEAR
 
 // window.onscroll = function () {
@@ -279,18 +291,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-/* burger close */
-let navButtons = document.querySelectorAll(".nav-button, .nav-button2");
-
-navButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        burguer.classList.remove("active");
-        nav.classList.remove("visible");
-        header.classList.remove("mobile");
-    });
-});
-
 /* Carrusel */
 
 const dataCarrusel = [
@@ -340,6 +340,7 @@ let posicion_carrusel = 0;
 const cerrarModal = () => {
     const modal = document.getElementById("casos_exito_modal");
     modal.style.display = "none";
+    overlay.style.display = 'none';
 };
 
 const cargar_carrusel = (posicion) => {
@@ -376,6 +377,7 @@ const cargar_carrusel = (posicion) => {
     text_empresa.forEach((elemento) => {
         elemento.innerHTML = dataCarrusel[posicion].empresa;
     });
+
 };
 
 
@@ -436,6 +438,7 @@ function leer_mas() {
 
     const modal = document.getElementById("casos_exito_modal");
     modal.style.display = "block";
+    overlay.style.display = 'block';
 
     const contenido = dataCarrusel[posicion].contenido;
     text_contenido.forEach((elemento) => {
