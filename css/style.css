@@ -368,38 +368,34 @@ body {
 
 .descubreBtn:hover,
 .cotizaBtn:hover,
-.nav-button2:hover,
-/* .formulario_box_button:hover {
+.nav-button2:hover {
     --x: 100%;
     transform: translateY(-4px);
     box-shadow: 0 5px 10px rgba(55, 144, 140, 0.2);
-} */
+} 
 
 .descubreBtn:active,
 .cotizaBtn:active,
-.nav-button2:active,
-/* .formulario_box_button:active {
+.nav-button2:active {
     transform: translateY(-2px);
     box-shadow: 0 2.5px 5px rgba(55, 144, 140, 0.2);
-} */
+} 
 
 .descubreBtn::after,
 .cotizaBtn:after,
-.nav-button2:after,
-/* .formulario_box_button:after {
+.nav-button2:after {
     height: 100%;
     width: 100%;
     z-index: -1;
     transition: all .4s;
-} */
+} 
 
 .descubreBtn:hover::after,
 .cotizaBtn:hover::after,
-.nav-button2:hover::after,
-/* .formulario_box_button:hover::after {
+.nav-button2:hover::after{
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 100;
-} */
+} 
 
 .casos_exito_button:hover {
     --x: 100%;
@@ -859,6 +855,14 @@ body {
     width: 100%;
 }
 
+/* .Es8downQlxiASDyltHtn .HhJ8keLZ1SBupKzmsP0V ._C_TCiqAjdTOkIIzyy7N ._2eZHnh_PMhyzt7w_zi7 .Rkt9F4BV7O3LQSywHdJy #id .lmtWIHO_gkbTeeyuvoJC .mOUYF5ZmuNL6I7t0mSFg{
+    background-color: red;
+} */
+
+/* .lmtWIHO_gkbTeeyuvoJC .sbRR6Vj9cBntcZ6P4tOo .mOUYF5ZmuNL6I7t0mSFg{
+    background-color: transparent;
+} */
+
 .calendly-inline-widget {
     height: 1000px;
 }
@@ -888,6 +892,10 @@ body {
 .formulario_imagen_box {
     display: flex;
     align-items: flex-start;
+}
+
+#scroll-image {
+    transition: transform 0.3s ease-in-out;
 }
 
 #auditoria2 {
