@@ -262,22 +262,22 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
     const imageContainer = document.getElementById('image-container');
     const scrollImage = document.getElementById('scroll-image');
-  
+
     document.addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
-      const containerHeight = imageContainer.offsetHeight;
-      const imageHeight = scrollImage.offsetHeight;
-      
-      const maxTranslateY = containerHeight - imageHeight;
-      
-      let translateY = Math.min(0, Math.max(-scrollPosition / 2, -maxTranslateY));
-  
-      scrollImage.style.transform = `translateY(${translateY}px)`;
+        const scrollPosition = window.scrollY;
+        const containerHeight = imageContainer.offsetHeight;
+        const imageHeight = scrollImage.offsetHeight;
+
+        const maxTranslateY = containerHeight - imageHeight;
+
+        let translateY = Math.min(0, Math.max(-scrollPosition / 2, -maxTranslateY));
+
+        scrollImage.style.transform = `translateY(${translateY}px)`;
     });
-  
+
     window.dispatchEvent(new Event('scroll'));
-  });
-  
+});
+
 
 
 /* burger close */
