@@ -243,21 +243,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* mano formulario/calendly */
 
-const formulario_mano_animar = document.getElementById("formulario_mano_animar");
-let ultimaDireccionScroll = '';
-let ultimoScroll = 0;
+// const formulario_mano_animar = document.getElementById("formulario_mano_animar");
+// let ultimaDireccionScroll = '';
+// let ultimoScroll = 0;
 
-window.addEventListener("scroll", function () {
-    const desplazamientoVertical = 100;
+// window.addEventListener("scroll", function () {
+//     const desplazamientoVertical = 100;
 
-    if (ultimaDireccionScroll !== 'arriba') {
-        formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
-        ultimaDireccionScroll = 'arriba';
-    } else {
-        formulario_mano_animar.style.transform = 'translateY(0)';
-        ultimaDireccionScroll = 'abajo';
-    }
-});
+//     if (ultimaDireccionScroll !== 'arriba') {
+//         formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
+//         ultimaDireccionScroll = 'arriba';
+//     } else {
+//         formulario_mano_animar.style.transform = `translateY(0)`;
+//         ultimaDireccionScroll = 'abajo';
+//     }
+// });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const imageContainer = document.getElementById('image-container');
+    const scrollImage = document.getElementById('scroll-image');
+  
+    document.addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY;
+      const containerHeight = imageContainer.offsetHeight;
+      const imageHeight = scrollImage.offsetHeight;
+      
+      const maxTranslateY = containerHeight - imageHeight;
+      
+      let translateY = Math.min(0, Math.max(-scrollPosition / 2, -maxTranslateY));
+  
+      scrollImage.style.transform = `translateY(${translateY}px)`;
+    });
+  
+    window.dispatchEvent(new Event('scroll'));
+  });
+  
 
 /* Carrusel */
 
