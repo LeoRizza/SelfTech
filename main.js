@@ -254,23 +254,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* mano formulario/calendly */
+const formulario_mano_animar = document.getElementById("scroll-image");
+let scrollActual = 0;
 
-// const formulario_mano_animar = document.getElementById("formulario_mano_animar");
-// let ultimaDireccionScroll = '';
-// let ultimoScroll = 0;
+window.addEventListener("scroll", function () {
+    const desplazamientoVertical = 100;
+    const deltaScroll = scrollActual - window.scrollY;
+    scrollActual = window.scrollY;
 
-// window.addEventListener("scroll", function () {
-//     const desplazamientoVertical = 100;
+    if (deltaScroll > 0) {
+        // Desplazamiento hacia arriba
+        formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
+    } else if (deltaScroll < 0) {
+        // Desplazamiento hacia abajo
+        formulario_mano_animar.style.transform = `translateY(0)`;
+    }
+});
 
-//     if (ultimaDireccionScroll !== 'arriba') {
-//         formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
-//         ultimaDireccionScroll = 'arriba';
-//     } else {
-//         formulario_mano_animar.style.transform = `translateY(0)`;
-//         ultimaDireccionScroll = 'abajo';
-//     }
-// });
+/* const formulario_mano_animar = document.getElementById("scroll-image");
+let ultimaDireccionScroll = '';
+let ultimoScroll = 0;
 
+window.addEventListener("scroll", function () {
+    const desplazamientoVertical = 100;
+
+    if (ultimaDireccionScroll !== 'arriba') {
+        formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
+        ultimaDireccionScroll = 'arriba';
+    } else {
+        formulario_mano_animar.style.transform = `translateY(0)`;
+        ultimaDireccionScroll = 'abajo';
+    }
+}); */
+
+/* 
 document.addEventListener('DOMContentLoaded', function () {
     const imageContainer = document.getElementById('image-container');
     const scrollImage = document.getElementById('scroll-image');
@@ -288,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     window.dispatchEvent(new Event('scroll'));
-});
+}); */
 
 
 /* Carrusel */

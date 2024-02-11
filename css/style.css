@@ -372,14 +372,14 @@ body {
     --x: 100%;
     transform: translateY(-4px);
     box-shadow: 0 5px 10px rgba(55, 144, 140, 0.2);
-} 
+}
 
 .descubreBtn:active,
 .cotizaBtn:active,
 .nav-button2:active {
     transform: translateY(-2px);
     box-shadow: 0 2.5px 5px rgba(55, 144, 140, 0.2);
-} 
+}
 
 .descubreBtn::after,
 .cotizaBtn:after,
@@ -388,14 +388,14 @@ body {
     width: 100%;
     z-index: -1;
     transition: all .4s;
-} 
+}
 
 .descubreBtn:hover::after,
 .cotizaBtn:hover::after,
-.nav-button2:hover::after{
+.nav-button2:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 100;
-} 
+}
 
 .casos_exito_button:hover {
     --x: 100%;
@@ -608,9 +608,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
-    z-index: 10; /* Debe ser inferior al z-index del modal */
-    display: none; /* Inicialmente oculto */
+    background: rgba(0, 0, 0, 0.7);
+    /* Fondo oscuro semitransparente */
+    z-index: 10;
+    /* Debe ser inferior al z-index del modal */
+    display: none;
+    /* Inicialmente oculto */
 }
 
 .modal {
@@ -657,9 +660,11 @@ body {
 .modalContainer {
     position: relative;
 }
-.casos_exito_ventana article{
+
+.casos_exito_ventana article {
     text-align: center;
 }
+
 .casos_exito_box_contenido_ventana {
     padding-top: 50px;
 }
@@ -855,12 +860,30 @@ body {
 }
 
 .formulario {
-    background-color: #1D1D1B;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: white;
-    /* padding-top: 100px; */
-    /* padding-bottom: 100px; */
+    position: relative;
+    overflow: hidden;
+}
+
+.formulario_imagen {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top: -10rem;
+    transition: transform 1.5s ease;
+}
+
+.formulario_imagen_box {
+    height: 100%;
+    transition: transform 0.5s ease;
+    display: block;
+    top: -10vh;
 }
 
 .calendly {
@@ -876,7 +899,7 @@ body {
 } */
 
 .calendly-inline-widget {
-    height: 1000px;
+    height: 120vh;
 }
 
 .calendly-inline-widget {
@@ -896,15 +919,6 @@ body {
     align-items: start;
     flex-grow: 6;
 } */
-
-.formulario_imagen {
-    width: 25vw;
-}
-
-.formulario_imagen_box {
-    display: flex;
-    align-items: flex-start;
-}
 
 #scroll-image {
     transition: transform 0.3s ease-in-out;
@@ -1055,7 +1069,7 @@ body {
     .manosI {
         margin-top: 65%;
         right: -2vw;
-        
+
     }
 }
 
@@ -1092,7 +1106,7 @@ body {
         left: -4vw;
         width: 22rem;
     }
-    
+
     .waveLeo1 {
         top: -18vw;
         width: 550px;
@@ -1681,10 +1695,24 @@ body {
         text-align: center;
         width: 80vw;
     }
+
+    .formulario_imagen {
+        display: none;
+    }
+
+    .calendly {
+        margin-right: 0;
+        margin-top: 0;
+    }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
+
+    .logo-img {
+        max-width: 200px;
+        object-fit: contain;
+    }
 
     .formulario_box_titulo {
         text-align: center;
@@ -1696,7 +1724,7 @@ body {
     }
 
     .formulario_imagen {
-        width: 20px;
+        display: none;
     }
 
     .manosD {
@@ -1846,10 +1874,6 @@ body {
 }
 
 @media (max-width: 390px) {
-    .logo-img {
-        height: 60px;
-    }
-
     .logo-img {
         height: 60px;
     }
