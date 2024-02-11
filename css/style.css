@@ -884,6 +884,7 @@ body {
     transition: transform 0.5s ease;
     display: block;
     top: -10vh;
+    position: relative;
 }
 
 .calendly {
@@ -1163,6 +1164,10 @@ body {
 
 @media (max-width: 1204px) {
 
+    .formulario_imagen_box {
+        top: 10vh;
+    }
+
     .waveLeo1 {
         top: -20vw;
         width: 400px;
@@ -1319,10 +1324,17 @@ body {
         margin-right: 2.5%;
     }
 
+    .formulario_imagen_box {
+        top: auto;
+    }
 }
 
 /* TABLET */
 @media (max-width: 830px) {
+
+    .formulario_imagen_box {
+        top: auto;
+    }
 
     .waveLeo {
         display: none;
@@ -1707,6 +1719,9 @@ body {
 
 /* MOBILE */
 @media (max-width: 600px) {
+    .formulario_imagen_box {
+        top: auto;
+    }
 
     .logo-img {
         max-width: 200px;
@@ -1854,6 +1869,11 @@ body {
 }
 
 @media (max-width: 487px) {
+
+    .formulario_imagen_box {
+        top: auto;
+    }
+
     .title {
         padding-top: 9vh;
     }
@@ -1873,6 +1893,11 @@ body {
 }
 
 @media (max-width: 390px) {
+
+    .formulario_imagen_box {
+        top: auto;
+    }
+
     .logo-img {
         height: 60px;
     }
@@ -1890,6 +1915,11 @@ body {
 }
 
 @media (max-width: 320px) {
+
+    .formulario_imagen_box {
+        top: auto;
+    }
+
     .menuCloseBtn {
         height: 1rem;
     }
