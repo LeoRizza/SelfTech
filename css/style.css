@@ -619,7 +619,7 @@ body {
 .modal {
     width: 30%;
     height: fit-content;
-    z-index: 20;
+    z-index: 2000;
     border-radius: 20px;
     position: fixed;
     top: 50%;
@@ -638,9 +638,12 @@ body {
 .closeModal {
     font-size: 30px;
     font-weight: 800;
-    color: #000;
+    color: #dfdfdf;
     text-align: center;
     cursor: pointer;
+    position: relative;
+    top: -1vw;
+    left: 12%;
 }
 
 .casos_exito_bottom_ventana {
@@ -655,6 +658,7 @@ body {
     width: 100vw;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 
 .modalContainer {
@@ -1102,6 +1106,11 @@ body {
 }
 
 @media (max-width: 1600px) {
+
+    .modal {
+        width: 35%;
+    }
+
     .manosD {
         left: -4vw;
         width: 22rem;
@@ -1160,9 +1169,20 @@ body {
     .br {
         display: none;
     }
+    .formulario_imagen_box {
+        top: 10vh;
+    }
 }
 
 @media (max-width: 1204px) {
+
+    .closeModal {
+        left: 18%;
+    }
+
+    .modal {
+        width: 40%;
+    }
 
     .formulario_imagen_box {
         top: 10vh;
@@ -1327,10 +1347,18 @@ body {
     .formulario_imagen_box {
         top: auto;
     }
+
+    .modal {
+        width: 50%;
+    }
 }
 
 /* TABLET */
 @media (max-width: 830px) {
+
+    .modal {
+        width: 60%;
+    }
 
     .formulario_imagen_box {
         top: auto;
@@ -1715,10 +1743,23 @@ body {
         margin-right: 0;
         margin-top: 0;
     }
+
+    .closeModal {
+        left: 25%;
+    }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
+
+    .closeModal {
+        left: 30%;
+    }
+
+    .modal {
+        width: 70%;
+    }
+
     .formulario_imagen_box {
         top: auto;
     }
@@ -1869,6 +1910,10 @@ body {
 }
 
 @media (max-width: 487px) {
+
+    .modal {
+        width: 90%;
+    }
 
     .formulario_imagen_box {
         top: auto;
