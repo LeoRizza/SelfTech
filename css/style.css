@@ -1150,6 +1150,9 @@ body {
     .title {
         margin-left: 0;
     }
+    .formulario_imagen {
+        top: -25vh;
+    }
 }
 
 @media (min-width: 1204px) {
@@ -1163,12 +1166,11 @@ body {
         align-self: self-start;
         padding-top: 40px;
     }
-}
 
-@media (min-width: 1204px) {
     .br {
         display: none;
     }
+
     .formulario_imagen_box {
         top: 10vh;
     }
