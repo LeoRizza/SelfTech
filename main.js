@@ -448,33 +448,31 @@ function mostrarLeerMas(mostrar) {
 function leer_mas() {
     const contenidoCompleto = dataCarrusel[posicion_carrusel].contenido;
 
-    const modalContenido = document.getElementById("casos_contenido_movil");
-    modalContenido.innerHTML = contenidoCompleto;
+    const modalContenido = document.getElementById("casos_contenido_modal");
+    if (modalContenido) {
+        modalContenido.innerHTML = contenidoCompleto;
+    }
 
-    text_contenido[0].innerHTML = `<span class="truncado">${text_contenido}</span>`;
+    const textContenidoElement = text_contenido[0];
+    if (textContenidoElement) {
+        const textoTruncado = truncarTexto(contenidoCompleto, 20);
+        mostrarLeerMas(contenidoCompleto.length > 20);
+
+        if (contenidoCompleto.length > 20) {
+            textContenidoElement.innerHTML = `<span class="truncado">${textoTruncado}</span><span class="completo">${contenidoCompleto}</span>`;
+        } else {
+            textContenidoElement.innerHTML = `<span class="truncado">${contenidoCompleto}</span>`;
+        }
+    }
 
     const modal = document.getElementById("casos_exito_modal");
-    modal.style.display = "block";
-    overlay.style.display = 'block';
-
-    const contenido = dataCarrusel[posicion].contenido;
-    text_contenido.forEach((elemento) => {
-        const textoTruncado = truncarTexto(contenido, 20);
-        mostrarLeerMas(contenido.length > 20);
-        if (contenido.length > 20) {
-            elemento.innerHTML = `<span class="truncado">${textoTruncado}</span><span class="completo">${contenido}</span>`;
-        } else {
-            elemento.innerHTML = `<span class="truncado">${contenido}</span>`;
-        }
-    });
-
-
-    mostrarLeerMas(true);
-
-    // Permitir desplazamiento en el modal
-    casos_contenido_movil.style.overflow = "visible";
-    casos_contenido_desktop.style.overflow = "visible";
+    const overlay = document.getElementById("overlay");
+    if (modal && overlay) {
+        modal.style.display = "block";
+        overlay.style.display = 'block';
+    }
 }
+
 
 iniciar();
 
