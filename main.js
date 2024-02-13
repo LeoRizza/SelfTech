@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //ondas servicios
 
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
     let waveLeo1 = document.querySelector('.waveLeo1');
     let waveLeo2 = document.querySelector('.waveLeo2');
 
@@ -252,6 +252,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     animateWaves();
 });
+ */
+document.addEventListener("DOMContentLoaded", function () {
+    let waveLeo1 = document.querySelector('.waveLeo1');
+    let waveLeo2 = document.querySelector('.waveLeo2');
+
+    const velocidadAnimacion = 0.002;  // Disminuye la velocidad de la animación
+    const desplazamientoMaximo = 100;   // Ajusta la distancia máxima de desplazamiento
+
+    function animateWaves() {
+        const tiempoActual = new Date().getTime();
+
+        // Desplazamiento lineal hacia abajo y hacia arriba para waveLeo1
+        const desplazamientoY1 = desplazamientoMaximo * Math.sin(velocidadAnimacion * tiempoActual);
+        waveLeo1.style.transform = `translateY(${desplazamientoY1}px)`;
+
+        // Desplazamiento lineal hacia arriba y hacia abajo para waveLeo2
+        const desplazamientoY2 = desplazamientoMaximo * Math.sin(velocidadAnimacion * tiempoActual + Math.PI);
+        waveLeo2.style.transform = `translateY(${desplazamientoY2}px)`;
+
+        requestAnimationFrame(animateWaves);
+    }
+
+    animateWaves();
+});
+
+
+
+
 
 /* mano formulario/calendly */
 const formulario_mano_animar = document.getElementById("scroll-image");
@@ -270,43 +298,6 @@ window.addEventListener("scroll", function () {
         formulario_mano_animar.style.transform = `translateY(0)`;
     }
 });
-
-/* const formulario_mano_animar = document.getElementById("scroll-image");
-let ultimaDireccionScroll = '';
-let ultimoScroll = 0;
-
-window.addEventListener("scroll", function () {
-    const desplazamientoVertical = 100;
-
-    if (ultimaDireccionScroll !== 'arriba') {
-        formulario_mano_animar.style.transform = `translateY(${desplazamientoVertical}px)`;
-        ultimaDireccionScroll = 'arriba';
-    } else {
-        formulario_mano_animar.style.transform = `translateY(0)`;
-        ultimaDireccionScroll = 'abajo';
-    }
-}); */
-
-/* 
-document.addEventListener('DOMContentLoaded', function () {
-    const imageContainer = document.getElementById('image-container');
-    const scrollImage = document.getElementById('scroll-image');
-
-    document.addEventListener('scroll', function () {
-        const scrollPosition = window.scrollY;
-        const containerHeight = imageContainer.offsetHeight;
-        const imageHeight = scrollImage.offsetHeight;
-
-        const maxTranslateY = containerHeight - imageHeight;
-
-        let translateY = Math.min(0, Math.max(-scrollPosition / 2, -maxTranslateY));
-
-        scrollImage.style.transform = `translateY(${translateY}px)`;
-    });
-
-    window.dispatchEvent(new Event('scroll'));
-}); */
-
 
 /* Carrusel */
 
@@ -372,7 +363,6 @@ const cargar_carrusel = (posicion) => {
     const contenido = dataCarrusel[posicion].contenido;
     const textoTruncado = truncarTexto(contenido, 80);
 
-    // Asignar texto truncado a los elementos correspondientes
     text_contenido_leer_desktop.innerHTML = textoTruncado;
     text_contenido_leer_movil.innerHTML = textoTruncado;
     text_contenido_desktop.innerHTML = textoTruncado;
@@ -475,8 +465,3 @@ function leer_mas() {
 
 
 iniciar();
-
-/* window.addEventListener('resize', function () {
-    resetear_estilos_carrusel();
-    cargar_carrusel(posicion_carrusel);
-}); */
