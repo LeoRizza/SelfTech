@@ -844,10 +844,15 @@ body {
     margin-bottom: 20px;
 }
 
+.conocenos_imagenes_fundador {
+    width: 18rem;
+}
+
 .conocenos_imagenes_fundador_mundo {
     position: absolute;
-    right: -25px;
-    top: -20px;
+    width: 5rem;
+    right: -5px;
+    top: -5px;
 }
 
 .conocenos_fundador {
