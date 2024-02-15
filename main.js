@@ -305,21 +305,21 @@ const dataCarrusel = [
     {
         img1: "./img/img_seccion3/logo_caso1.png",
         img2: "./img/img_seccion3/retrato_caso1.png",
-        contenido: 'Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable. Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable',
+        contenido: '"Estoy muy agradecido con el trabajo de Selftech. Automatizaron varios procesos en mi empresa de manera muy eficaz, lo mejor que es una gran empresa, muy confiable."',
         autor: "Giovanni Rimini de ",
         empresa: "Ricoseller"
     },
     {
         img1: "./img/img_seccion3/logo_caso2.png",
         img2: "./img/img_seccion3/retrato_caso2.png",
-        contenido: 'Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos.',
+        contenido: '"Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos."',
         autor: "Pablo Hernandez de ",
         empresa: "Mandala Garden"
     },
     {
         img1: "./img/img_seccion3/logo_caso3.png",
         img2: "./img/img_seccion3/retrato_caso3.png",
-        contenido: 'La nueva era de la tecnología llego y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios.',
+        contenido: '"La nueva era de la tecnología llego y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios."',
         autor: "Andres Soto de ",
         empresa: "Freedelivery"
     },
