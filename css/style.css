@@ -1190,6 +1190,10 @@ body {
     .formulario_imagen_box {
         top: 10vh;
     }
+
+    .main-title{
+        min-width: 530px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -2123,4 +2127,9 @@ body {
         line-height: 28px;
         font-size: 1.5rem;
     }
+
+    .main-title{
+        min-width: 710px;
+    }
+
 }
