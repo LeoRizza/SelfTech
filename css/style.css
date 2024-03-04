@@ -1838,7 +1838,6 @@ body {
     .casos_exito_contenido {
         font-size: 14px;
         line-height: 18px;
-        max-height: calc(18px * var(--casos_testimonio_nlineas));
         overflow: hidden;
     }
 
