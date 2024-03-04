@@ -312,16 +312,9 @@ const dataCarrusel = [
     {
         img1: "./img/img_seccion3/logo_caso2.png",
         img2: "./img/img_seccion3/retrato_caso2.png",
-        contenido: '"Con SelfTech AI he llegado al éxito en mi emprendimiento, ahora tengo más clientes satisfechos."',
-        autor: "Pablo Hernandez de ",
-        empresa: "Mandala Garden"
-    },
-    {
-        img1: "./img/img_seccion3/logo_caso3.png",
-        img2: "./img/img_seccion3/retrato_caso3.png",
-        contenido: '"La nueva era de la tecnología llego y no podría estar más satisfecho con el servicio de Selftech, ahora mi empresa es líder en sus servicios."',
-        autor: "Andres Soto de ",
-        empresa: "Freedelivery"
+        contenido: '"Gracias a Manuel y su equipo por brindarnos el apoyo para hacer mas eficiente la respuesta hacia nuestros pasajeros. Excelente predisposición y acompañamiento!"',
+        autor: "Lautaro Diaz de ",
+        empresa: "Kamchatka"
     },
 ];
 
